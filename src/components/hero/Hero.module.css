@@ -1,0 +1,132 @@
+.hero {
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-block: var(--spacing-space-96);
+  padding-inline: var(--spacing-space-16);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--spacing-space-64);
+  align-items: center;
+  scroll-margin-top: var(--spacing-space-96);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-space-24);
+  min-width: 0;
+}
+
+.name {
+  margin: 0;
+  font-size: 96px;
+  line-height: 92px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--color-foreground);
+  overflow-wrap: break-word;
+}
+
+.headline {
+  margin: 0;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  color: var(--color-foreground);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-space-12);
+}
+
+.tagline {
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-space-16);
+  margin-top: var(--spacing-space-8);
+}
+
+.portrait {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 480px;
+  padding: 0 var(--spacing-space-20) var(--spacing-space-20) 0;
+  box-sizing: border-box;
+}
+
+.offset {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 20px);
+  height: 560px;
+  transform: translate(20px, 20px);
+  background: var(--color-primary);
+  border-radius: var(--radius-xl);
+}
+
+.image {
+  position: relative;
+  display: block;
+  width: calc(100% - 20px);
+  height: 560px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+}
+
+@media (min-width: 640px) {
+  .hero {
+    padding-inline: var(--spacing-space-24);
+  }
+}
+
+@media (min-width: 900px) {
+  .hero {
+    padding-inline: var(--spacing-space-40);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-inline: var(--spacing-space-48);
+  }
+
+  .portrait {
+    justify-self: end;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero {
+    padding-inline: var(--spacing-space-64);
+  }
+}
+
+@media (max-width: 639px) {
+  .hero {
+    padding-block: var(--spacing-space-64);
+  }
+
+  .name {
+    font-size: 56px;
+    line-height: 60px;
+  }
+
+  .headline {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}

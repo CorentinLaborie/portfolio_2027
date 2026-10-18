@@ -1,0 +1,647 @@
+# Next.js Docs Digest (bundled docs, Next.js 16.4.2)
+
+Source folder: `nextjs-docs/` at the repo root (a copy of `node_modules/next/dist/docs/`).
+Installation guide: `nextjs-docs/01-app/01-getting-started/01-installation.md`.
+Version: 16.4.2 (from `node_modules/next/package.json`).
+All paths below are relative to the docs folder.
+Items marked **not in docs** were not found in the bundled docs.
+
+## 1. Files read
+
+- Total: **474 files** (01-app: 298, 02-pages: 167, 03-architecture: 5, 04-community: 3, index.md: 1).
+- Read in full: every file was read through a concatenated copy of the corpus (3.4 MB, 85,111 lines). No repo files were changed; no npm, next, git or gh commands were run.
+- Full list (relative paths):
+
+- ./nextjs-docs/01-app/01-getting-started/01-installation.md
+- ./nextjs-docs/01-app/01-getting-started/02-project-structure.md
+- ./nextjs-docs/01-app/01-getting-started/03-layouts-and-pages.md
+- ./nextjs-docs/01-app/01-getting-started/04-linking-and-navigating.md
+- ./nextjs-docs/01-app/01-getting-started/05-server-and-client-components.md
+- ./nextjs-docs/01-app/01-getting-started/06-fetching-data.md
+- ./nextjs-docs/01-app/01-getting-started/07-mutating-data.md
+- ./nextjs-docs/01-app/01-getting-started/08-caching.md
+- ./nextjs-docs/01-app/01-getting-started/09-revalidating.md
+- ./nextjs-docs/01-app/01-getting-started/10-error-handling.md
+- ./nextjs-docs/01-app/01-getting-started/11-css.md
+- ./nextjs-docs/01-app/01-getting-started/12-images.md
+- ./nextjs-docs/01-app/01-getting-started/13-fonts.md
+- ./nextjs-docs/01-app/01-getting-started/14-metadata-and-og-images.md
+- ./nextjs-docs/01-app/01-getting-started/15-route-handlers.md
+- ./nextjs-docs/01-app/01-getting-started/16-proxy.md
+- ./nextjs-docs/01-app/01-getting-started/17-deploying.md
+- ./nextjs-docs/01-app/01-getting-started/18-upgrading.md
+- ./nextjs-docs/01-app/01-getting-started/index.md
+- ./nextjs-docs/01-app/02-guides/adopting-partial-prefetching.md
+- ./nextjs-docs/01-app/02-guides/ai-agents.md
+- ./nextjs-docs/01-app/02-guides/analytics.md
+- ./nextjs-docs/01-app/02-guides/authentication.md
+- ./nextjs-docs/01-app/02-guides/authentication-with-cache-components.md
+- ./nextjs-docs/01-app/02-guides/backend-for-frontend.md
+- ./nextjs-docs/01-app/02-guides/building.md
+- ./nextjs-docs/01-app/02-guides/caching-without-cache-components.md
+- ./nextjs-docs/01-app/02-guides/cdn-caching.md
+- ./nextjs-docs/01-app/02-guides/ci-build-caching.md
+- ./nextjs-docs/01-app/02-guides/client-side-data-fetching/index.md
+- ./nextjs-docs/01-app/02-guides/client-side-data-fetching/swr.md
+- ./nextjs-docs/01-app/02-guides/client-side-data-fetching/tanstack-query.md
+- ./nextjs-docs/01-app/02-guides/content-security-policy.md
+- ./nextjs-docs/01-app/02-guides/css-in-js.md
+- ./nextjs-docs/01-app/02-guides/custom-server.md
+- ./nextjs-docs/01-app/02-guides/data-security.md
+- ./nextjs-docs/01-app/02-guides/debugging.md
+- ./nextjs-docs/01-app/02-guides/deploying-to-platforms.md
+- ./nextjs-docs/01-app/02-guides/draft-mode.md
+- ./nextjs-docs/01-app/02-guides/environment-variables.md
+- ./nextjs-docs/01-app/02-guides/forms.md
+- ./nextjs-docs/01-app/02-guides/how-revalidation-works.md
+- ./nextjs-docs/01-app/02-guides/incremental-static-regeneration-cache-components.md
+- ./nextjs-docs/01-app/02-guides/incremental-static-regeneration.md
+- ./nextjs-docs/01-app/02-guides/index.md
+- ./nextjs-docs/01-app/02-guides/instant-navigation.md
+- ./nextjs-docs/01-app/02-guides/instrumentation.md
+- ./nextjs-docs/01-app/02-guides/interactive-apps.md
+- ./nextjs-docs/01-app/02-guides/internationalization.md
+- ./nextjs-docs/01-app/02-guides/json-ld.md
+- ./nextjs-docs/01-app/02-guides/keeping-pages-static.md
+- ./nextjs-docs/01-app/02-guides/lazy-loading.md
+- ./nextjs-docs/01-app/02-guides/local-development.md
+- ./nextjs-docs/01-app/02-guides/mcp.md
+- ./nextjs-docs/01-app/02-guides/mdx.md
+- ./nextjs-docs/01-app/02-guides/memory-usage.md
+- ./nextjs-docs/01-app/02-guides/migrating/app-router-migration.md
+- ./nextjs-docs/01-app/02-guides/migrating/from-create-react-app.md
+- ./nextjs-docs/01-app/02-guides/migrating/from-vite.md
+- ./nextjs-docs/01-app/02-guides/migrating/index.md
+- ./nextjs-docs/01-app/02-guides/migrating-to-cache-components.md
+- ./nextjs-docs/01-app/02-guides/multi-tenant.md
+- ./nextjs-docs/01-app/02-guides/multi-zones.md
+- ./nextjs-docs/01-app/02-guides/offline-support.md
+- ./nextjs-docs/01-app/02-guides/open-telemetry.md
+- ./nextjs-docs/01-app/02-guides/optimizing-prefetching.md
+- ./nextjs-docs/01-app/02-guides/optimizing-the-static-shell.md
+- ./nextjs-docs/01-app/02-guides/package-bundling.md
+- ./nextjs-docs/01-app/02-guides/ppr-platform-guide.md
+- ./nextjs-docs/01-app/02-guides/prefetching.md
+- ./nextjs-docs/01-app/02-guides/preserving-ui-state.md
+- ./nextjs-docs/01-app/02-guides/preventing-flash-before-hydration.md
+- ./nextjs-docs/01-app/02-guides/production-checklist.md
+- ./nextjs-docs/01-app/02-guides/progressive-web-apps.md
+- ./nextjs-docs/01-app/02-guides/public-static-pages.md
+- ./nextjs-docs/01-app/02-guides/redirecting.md
+- ./nextjs-docs/01-app/02-guides/rendering-philosophy.md
+- ./nextjs-docs/01-app/02-guides/sass.md
+- ./nextjs-docs/01-app/02-guides/scripts.md
+- ./nextjs-docs/01-app/02-guides/self-hosting.md
+- ./nextjs-docs/01-app/02-guides/server-actions.md
+- ./nextjs-docs/01-app/02-guides/server-and-client-boundary.md
+- ./nextjs-docs/01-app/02-guides/single-page-applications.md
+- ./nextjs-docs/01-app/02-guides/static-exports.md
+- ./nextjs-docs/01-app/02-guides/streaming.md
+- ./nextjs-docs/01-app/02-guides/tailwind-v3-css.md
+- ./nextjs-docs/01-app/02-guides/testing/cypress.md
+- ./nextjs-docs/01-app/02-guides/testing/index.md
+- ./nextjs-docs/01-app/02-guides/testing/jest.md
+- ./nextjs-docs/01-app/02-guides/testing/playwright.md
+- ./nextjs-docs/01-app/02-guides/testing/vitest.md
+- ./nextjs-docs/01-app/02-guides/third-party-libraries.md
+- ./nextjs-docs/01-app/02-guides/upgrading/agent-upgrade.md
+- ./nextjs-docs/01-app/02-guides/upgrading/codemods.md
+- ./nextjs-docs/01-app/02-guides/upgrading/index.md
+- ./nextjs-docs/01-app/02-guides/upgrading/version-14.md
+- ./nextjs-docs/01-app/02-guides/upgrading/version-15.md
+- ./nextjs-docs/01-app/02-guides/upgrading/version-16.md
+- ./nextjs-docs/01-app/02-guides/videos.md
+- ./nextjs-docs/01-app/02-guides/view-transitions.md
+- ./nextjs-docs/01-app/03-api-reference/01-directives/index.md
+- ./nextjs-docs/01-app/03-api-reference/01-directives/use-cache.md
+- ./nextjs-docs/01-app/03-api-reference/01-directives/use-cache-private.md
+- ./nextjs-docs/01-app/03-api-reference/01-directives/use-cache-remote.md
+- ./nextjs-docs/01-app/03-api-reference/01-directives/use-client.md
+- ./nextjs-docs/01-app/03-api-reference/01-directives/use-server.md
+- ./nextjs-docs/01-app/03-api-reference/02-components/font.md
+- ./nextjs-docs/01-app/03-api-reference/02-components/form.md
+- ./nextjs-docs/01-app/03-api-reference/02-components/image.md
+- ./nextjs-docs/01-app/03-api-reference/02-components/index.md
+- ./nextjs-docs/01-app/03-api-reference/02-components/link.md
+- ./nextjs-docs/01-app/03-api-reference/02-components/script.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/01-metadata/app-icons.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/01-metadata/index.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/01-metadata/manifest.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/01-metadata/opengraph-image.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/01-metadata/robots.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/01-metadata/sitemap.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/dynamicParams.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/ensureStatic.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/index.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/instant.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/maxDuration.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/preferredRegion.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/prefetch.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/runtime.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/default.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/dynamic-routes.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/error.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/forbidden.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/index.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/instrumentation-client.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/instrumentation.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/intercepting-routes.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/layout.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/loading.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/mdx-components.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/middleware.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/not-found.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/page.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/parallel-routes.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/proxy.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/public-folder.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/route-groups.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/route.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/src-folder.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/template.md
+- ./nextjs-docs/01-app/03-api-reference/03-file-conventions/unauthorized.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/after.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/cacheLife.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/cacheTag.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/catchError.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/connection.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/cookies.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/draft-mode.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/fetch.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/forbidden.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/generate-image-metadata.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/generate-metadata.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/generate-sitemaps.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/generate-static-params.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/generate-viewport.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/headers.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/image-response.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/index.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/io.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/navigation.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/next-request.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/next-response.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/next-root-params.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/not-found.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/permanentRedirect.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/prefetch.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/redirect.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/refresh.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/revalidatePath.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/revalidateTag.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/unauthorized.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/unstable_cache.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/unstable_noStore.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/unstable_rethrow.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/updateTag.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/use-link-status.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/use-offline.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/use-params.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/use-pathname.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/userAgent.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/use-report-web-vitals.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/use-router.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/use-search-params.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/use-selected-layout-segment.md
+- ./nextjs-docs/01-app/03-api-reference/04-functions/use-selected-layout-segments.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/adapterPath.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/agentFeedback.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/agentRules.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/agentUpgrade.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/allowedDevOrigins.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/appDir.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/assetPrefix.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/authInterrupts.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/basePath.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/cacheComponents.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/cacheHandlers.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/cacheLife.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/cacheMaxMemorySize.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/compress.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/crossOrigin.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/cssChunking.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/deploymentId.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/devIndicators.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/distDir.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/enablePrerenderSourceMaps.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/env.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/expireTime.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/exportPathMap.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/exposeTestingApiInProductionBuild.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/generateBuildId.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/generateEtags.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/headers.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/htmlLimitedBots.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/httpAgentOptions.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/images.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/incrementalCacheHandlerPath.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/index.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/inlineCss.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/instrumentationClientInject.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/logging.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/mdxRs.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/onDemandEntries.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/optimizePackageImports.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/outputHashSalt.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/output.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/pageExtensions.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/partialPrefetching.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/poweredByHeader.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/prefetchInlining.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/productionBrowserSourceMaps.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/proxyClientMaxBodySize.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/reactCompiler.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/reactMaxHeadersLength.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/reactStrictMode.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/redirects.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/rewrites.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/sassOptions.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/serverActions.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/serverComponentsHmrCache.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/serverExternalPackages.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/skipProxyUrlNormalize.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/skipTrailingSlashRedirect.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/staleTimes.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/staticGeneration.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/supportsImmutableAssets.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/taint.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/trailingSlash.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/transpilePackages.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/turbopackChunking.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/turbopackFileSystemCache.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/turbopackGc.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/turbopackIgnoreIssue.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/turbopackLazyDynamicImports.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/turbopackLazyDynamicImportsSSR.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/turbopackLocalPostcssConfig.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/turbopack.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/turbopackMemoryEviction.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/turbopackPluginRuntimeStrategy.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/turbopackRustReactCompiler.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/typedRoutes.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/typescript.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/urlImports.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/useLightningcss.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/useOffline.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/useTypeScriptCli.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/webpack.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/01-next-config-js/webVitalsAttribution.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/02-typescript.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/03-eslint.md
+- ./nextjs-docs/01-app/03-api-reference/05-config/index.md
+- ./nextjs-docs/01-app/03-api-reference/06-cli/create-next-app.md
+- ./nextjs-docs/01-app/03-api-reference/06-cli/index.md
+- ./nextjs-docs/01-app/03-api-reference/06-cli/next.md
+- ./nextjs-docs/01-app/03-api-reference/07-adapters/01-configuration.md
+- ./nextjs-docs/01-app/03-api-reference/07-adapters/02-creating-an-adapter.md
+- ./nextjs-docs/01-app/03-api-reference/07-adapters/03-api-reference.md
+- ./nextjs-docs/01-app/03-api-reference/07-adapters/04-testing-adapters.md
+- ./nextjs-docs/01-app/03-api-reference/07-adapters/05-routing-with-next-routing.md
+- ./nextjs-docs/01-app/03-api-reference/07-adapters/06-implementing-ppr-in-an-adapter.md
+- ./nextjs-docs/01-app/03-api-reference/07-adapters/07-runtime-integration.md
+- ./nextjs-docs/01-app/03-api-reference/07-adapters/08-invoking-entrypoints.md
+- ./nextjs-docs/01-app/03-api-reference/07-adapters/09-output-types.md
+- ./nextjs-docs/01-app/03-api-reference/07-adapters/10-routing-information.md
+- ./nextjs-docs/01-app/03-api-reference/07-adapters/11-use-cases.md
+- ./nextjs-docs/01-app/03-api-reference/07-adapters/12-immutable-static-assets.md
+- ./nextjs-docs/01-app/03-api-reference/07-adapters/index.md
+- ./nextjs-docs/01-app/03-api-reference/07-edge.md
+- ./nextjs-docs/01-app/03-api-reference/08-turbopack.md
+- ./nextjs-docs/01-app/03-api-reference/index.md
+- ./nextjs-docs/01-app/04-glossary.md
+- ./nextjs-docs/01-app/index.md
+- ./nextjs-docs/02-pages/01-getting-started/01-installation.md
+- ./nextjs-docs/02-pages/01-getting-started/02-project-structure.md
+- ./nextjs-docs/02-pages/01-getting-started/04-images.md
+- ./nextjs-docs/02-pages/01-getting-started/05-fonts.md
+- ./nextjs-docs/02-pages/01-getting-started/06-css.md
+- ./nextjs-docs/02-pages/01-getting-started/11-deploying.md
+- ./nextjs-docs/02-pages/01-getting-started/index.md
+- ./nextjs-docs/02-pages/02-guides/analytics.md
+- ./nextjs-docs/02-pages/02-guides/authentication.md
+- ./nextjs-docs/02-pages/02-guides/babel.md
+- ./nextjs-docs/02-pages/02-guides/ci-build-caching.md
+- ./nextjs-docs/02-pages/02-guides/content-security-policy.md
+- ./nextjs-docs/02-pages/02-guides/css-in-js.md
+- ./nextjs-docs/02-pages/02-guides/custom-server.md
+- ./nextjs-docs/02-pages/02-guides/debugging.md
+- ./nextjs-docs/02-pages/02-guides/draft-mode.md
+- ./nextjs-docs/02-pages/02-guides/environment-variables.md
+- ./nextjs-docs/02-pages/02-guides/forms.md
+- ./nextjs-docs/02-pages/02-guides/incremental-static-regeneration.md
+- ./nextjs-docs/02-pages/02-guides/index.md
+- ./nextjs-docs/02-pages/02-guides/instrumentation.md
+- ./nextjs-docs/02-pages/02-guides/internationalization.md
+- ./nextjs-docs/02-pages/02-guides/lazy-loading.md
+- ./nextjs-docs/02-pages/02-guides/mdx.md
+- ./nextjs-docs/02-pages/02-guides/migrating/app-router-migration.md
+- ./nextjs-docs/02-pages/02-guides/migrating/from-create-react-app.md
+- ./nextjs-docs/02-pages/02-guides/migrating/from-vite.md
+- ./nextjs-docs/02-pages/02-guides/migrating/index.md
+- ./nextjs-docs/02-pages/02-guides/multi-zones.md
+- ./nextjs-docs/02-pages/02-guides/open-telemetry.md
+- ./nextjs-docs/02-pages/02-guides/package-bundling.md
+- ./nextjs-docs/02-pages/02-guides/post-css.md
+- ./nextjs-docs/02-pages/02-guides/preview-mode.md
+- ./nextjs-docs/02-pages/02-guides/production-checklist.md
+- ./nextjs-docs/02-pages/02-guides/redirecting.md
+- ./nextjs-docs/02-pages/02-guides/sass.md
+- ./nextjs-docs/02-pages/02-guides/scripts.md
+- ./nextjs-docs/02-pages/02-guides/self-hosting.md
+- ./nextjs-docs/02-pages/02-guides/static-exports.md
+- ./nextjs-docs/02-pages/02-guides/tailwind-v3-css.md
+- ./nextjs-docs/02-pages/02-guides/testing/cypress.md
+- ./nextjs-docs/02-pages/02-guides/testing/index.md
+- ./nextjs-docs/02-pages/02-guides/testing/jest.md
+- ./nextjs-docs/02-pages/02-guides/testing/playwright.md
+- ./nextjs-docs/02-pages/02-guides/testing/vitest.md
+- ./nextjs-docs/02-pages/02-guides/third-party-libraries.md
+- ./nextjs-docs/02-pages/02-guides/upgrading/codemods.md
+- ./nextjs-docs/02-pages/02-guides/upgrading/index.md
+- ./nextjs-docs/02-pages/02-guides/upgrading/version-10.md
+- ./nextjs-docs/02-pages/02-guides/upgrading/version-11.md
+- ./nextjs-docs/02-pages/02-guides/upgrading/version-12.md
+- ./nextjs-docs/02-pages/02-guides/upgrading/version-13.md
+- ./nextjs-docs/02-pages/02-guides/upgrading/version-14.md
+- ./nextjs-docs/02-pages/02-guides/upgrading/version-15.md
+- ./nextjs-docs/02-pages/02-guides/upgrading/version-16.md
+- ./nextjs-docs/02-pages/02-guides/upgrading/version-9.md
+- ./nextjs-docs/02-pages/03-building-your-application/01-routing/01-pages-and-layouts.md
+- ./nextjs-docs/02-pages/03-building-your-application/01-routing/02-dynamic-routes.md
+- ./nextjs-docs/02-pages/03-building-your-application/01-routing/03-linking-and-navigating.md
+- ./nextjs-docs/02-pages/03-building-your-application/01-routing/05-custom-app.md
+- ./nextjs-docs/02-pages/03-building-your-application/01-routing/06-custom-document.md
+- ./nextjs-docs/02-pages/03-building-your-application/01-routing/07-api-routes.md
+- ./nextjs-docs/02-pages/03-building-your-application/01-routing/08-custom-error.md
+- ./nextjs-docs/02-pages/03-building-your-application/01-routing/index.md
+- ./nextjs-docs/02-pages/03-building-your-application/02-rendering/01-server-side-rendering.md
+- ./nextjs-docs/02-pages/03-building-your-application/02-rendering/02-static-site-generation.md
+- ./nextjs-docs/02-pages/03-building-your-application/02-rendering/04-automatic-static-optimization.md
+- ./nextjs-docs/02-pages/03-building-your-application/02-rendering/05-client-side-rendering.md
+- ./nextjs-docs/02-pages/03-building-your-application/02-rendering/index.md
+- ./nextjs-docs/02-pages/03-building-your-application/03-data-fetching/01-get-static-props.md
+- ./nextjs-docs/02-pages/03-building-your-application/03-data-fetching/02-get-static-paths.md
+- ./nextjs-docs/02-pages/03-building-your-application/03-data-fetching/03-get-server-side-props.md
+- ./nextjs-docs/02-pages/03-building-your-application/03-data-fetching/05-client-side.md
+- ./nextjs-docs/02-pages/03-building-your-application/03-data-fetching/index.md
+- ./nextjs-docs/02-pages/03-building-your-application/06-configuring/12-error-handling.md
+- ./nextjs-docs/02-pages/03-building-your-application/06-configuring/index.md
+- ./nextjs-docs/02-pages/03-building-your-application/index.md
+- ./nextjs-docs/02-pages/04-api-reference/01-components/font.md
+- ./nextjs-docs/02-pages/04-api-reference/01-components/form.md
+- ./nextjs-docs/02-pages/04-api-reference/01-components/head.md
+- ./nextjs-docs/02-pages/04-api-reference/01-components/image-legacy.md
+- ./nextjs-docs/02-pages/04-api-reference/01-components/image.md
+- ./nextjs-docs/02-pages/04-api-reference/01-components/index.md
+- ./nextjs-docs/02-pages/04-api-reference/01-components/link.md
+- ./nextjs-docs/02-pages/04-api-reference/01-components/script.md
+- ./nextjs-docs/02-pages/04-api-reference/02-file-conventions/index.md
+- ./nextjs-docs/02-pages/04-api-reference/02-file-conventions/instrumentation.md
+- ./nextjs-docs/02-pages/04-api-reference/02-file-conventions/proxy.md
+- ./nextjs-docs/02-pages/04-api-reference/02-file-conventions/public-folder.md
+- ./nextjs-docs/02-pages/04-api-reference/02-file-conventions/src-folder.md
+- ./nextjs-docs/02-pages/04-api-reference/03-functions/catchError.md
+- ./nextjs-docs/02-pages/04-api-reference/03-functions/get-initial-props.md
+- ./nextjs-docs/02-pages/04-api-reference/03-functions/get-server-side-props.md
+- ./nextjs-docs/02-pages/04-api-reference/03-functions/get-static-paths.md
+- ./nextjs-docs/02-pages/04-api-reference/03-functions/get-static-props.md
+- ./nextjs-docs/02-pages/04-api-reference/03-functions/index.md
+- ./nextjs-docs/02-pages/04-api-reference/03-functions/next-request.md
+- ./nextjs-docs/02-pages/04-api-reference/03-functions/next-response.md
+- ./nextjs-docs/02-pages/04-api-reference/03-functions/use-params.md
+- ./nextjs-docs/02-pages/04-api-reference/03-functions/userAgent.md
+- ./nextjs-docs/02-pages/04-api-reference/03-functions/use-report-web-vitals.md
+- ./nextjs-docs/02-pages/04-api-reference/03-functions/use-router.md
+- ./nextjs-docs/02-pages/04-api-reference/03-functions/use-search-params.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/adapterPath.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/allowedDevOrigins.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/assetPrefix.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/basePath.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/bundlePagesRouterDependencies.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/compress.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/crossOrigin.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/deploymentId.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/devIndicators.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/distDir.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/enablePrerenderSourceMaps.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/env.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/exportPathMap.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/generateBuildId.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/generateEtags.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/headers.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/httpAgentOptions.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/images.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/index.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/logging.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/onDemandEntries.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/optimizePackageImports.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/output.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/pageExtensions.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/poweredByHeader.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/productionBrowserSourceMaps.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/proxyClientMaxBodySize.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/reactStrictMode.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/redirects.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/rewrites.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/serverExternalPackages.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/skipProxyUrlNormalize.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/skipTrailingSlashRedirect.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/trailingSlash.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/transpilePackages.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/turbopackChunking.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/turbopack.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/typescript.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/urlImports.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/useLightningcss.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/useTypeScriptCli.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/webpack.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-next-config-js/webVitalsAttribution.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/01-typescript.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/02-eslint.md
+- ./nextjs-docs/02-pages/04-api-reference/04-config/index.md
+- ./nextjs-docs/02-pages/04-api-reference/05-cli/create-next-app.md
+- ./nextjs-docs/02-pages/04-api-reference/05-cli/index.md
+- ./nextjs-docs/02-pages/04-api-reference/05-cli/next.md
+- ./nextjs-docs/02-pages/04-api-reference/06-adapters/01-configuration.md
+- ./nextjs-docs/02-pages/04-api-reference/06-adapters/02-creating-an-adapter.md
+- ./nextjs-docs/02-pages/04-api-reference/06-adapters/03-api-reference.md
+- ./nextjs-docs/02-pages/04-api-reference/06-adapters/04-testing-adapters.md
+- ./nextjs-docs/02-pages/04-api-reference/06-adapters/05-routing-with-next-routing.md
+- ./nextjs-docs/02-pages/04-api-reference/06-adapters/06-runtime-integration.md
+- ./nextjs-docs/02-pages/04-api-reference/06-adapters/07-invoking-entrypoints.md
+- ./nextjs-docs/02-pages/04-api-reference/06-adapters/08-output-types.md
+- ./nextjs-docs/02-pages/04-api-reference/06-adapters/09-routing-information.md
+- ./nextjs-docs/02-pages/04-api-reference/06-adapters/10-use-cases.md
+- ./nextjs-docs/02-pages/04-api-reference/06-adapters/index.md
+- ./nextjs-docs/02-pages/04-api-reference/06-edge.md
+- ./nextjs-docs/02-pages/04-api-reference/08-turbopack.md
+- ./nextjs-docs/02-pages/04-api-reference/index.md
+- ./nextjs-docs/02-pages/index.md
+- ./nextjs-docs/03-architecture/accessibility.md
+- ./nextjs-docs/03-architecture/fast-refresh.md
+- ./nextjs-docs/03-architecture/index.md
+- ./nextjs-docs/03-architecture/nextjs-compiler.md
+- ./nextjs-docs/03-architecture/supported-browsers.md
+- ./nextjs-docs/04-community/01-contribution-guide.md
+- ./nextjs-docs/04-community/02-rspack.md
+- ./nextjs-docs/04-community/index.md
+- ./nextjs-docs/index.md
+
+## 2. App Router conventions
+
+- Root layout is required: `app/layout.tsx` must render `<html>` and `<body>`. `next dev` creates it if missing. (`01-app/01-getting-started/01-installation.md`; `01-app/03-api-reference/03-file-conventions/layout.md`)
+- Root layout and nested layouts: layouts keep state and do not re-render on navigation; they receive `children`. (`01-app/01-getting-started/03-layouts-and-pages.md`; `01-app/03-api-reference/03-file-conventions/layout.md`)
+- Layouts do not receive `searchParams`; use the page prop or `useSearchParams` in a Client Component. (`01-app/03-api-reference/04-functions/use-search-params.md`)
+- Pages: `page.js|tsx` is the leaf; a page is required to make a segment public. Default export is a Server Component unless `'use client'`. (`01-app/03-api-reference/03-file-conventions/page.md`)
+- Dynamic segments: `[slug]`, catch-all `[...slug]` (array), optional catch-all `[[...slug]]`. (`01-app/03-api-reference/03-file-conventions/dynamic-routes.md`)
+- Async params: `params` and `searchParams` are Promises. Await them (`const { slug } = await params`), or use `use()` in Client Components. Sync access was removed in 16. (`01-app/03-api-reference/03-file-conventions/page.md`; `01-app/02-guides/upgrading/version-16.md`)
+- Root params: segments above the root layout are readable with `import { lang } from 'next/root-params'` in Server Components. (`01-app/03-api-reference/04-functions/next-root-params.md`)
+- `generateStaticParams`: replaces `getStaticPaths`; returns an array of param objects; child segment functions run per parent param; `params` is a Promise in the page. With Cache Components it must return at least one param (empty array is a build error). (`01-app/03-api-reference/04-functions/generate-static-params.md`; `01-app/02-guides/migrating-to-cache-components.md`)
+- `dynamicParams`: default `true`; `false` returns 404 for params not generated. Not allowed with Cache Components (build error; use `notFound()` instead). (`01-app/03-api-reference/03-file-conventions/02-route-segment-config/dynamicParams.md`; `01-app/02-guides/migrating-to-cache-components.md`)
+- Metadata: static `export const metadata` or `export async function generateMetadata({ params, searchParams }, parent)`. Server Components only. A segment cannot export both. (`01-app/03-api-reference/04-functions/generate-metadata.md`)
+- Route handlers: `route.js|ts` exports `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD`, `OPTIONS`. Cannot share a segment with `page`. GET is dynamic by default since 15. (`01-app/03-api-reference/03-file-conventions/route.md`)
+- `loading.js`: wraps the page (and nested layout) in a Suspense boundary. It does not wrap the same-segment layout, template or error. (`01-app/03-api-reference/03-file-conventions/loading.md`)
+- `error.js`: Client Component with props `error`, `retry` (stable in 16.3) and `reset`. `global-error.js` must define its own `<html>` and `<body>`. (`01-app/03-api-reference/03-file-conventions/error.md`)
+- `not-found.js`: rendered by `notFound()` in the segment. `notFound()` gives 404 before streaming and 200 plus `noindex` after streaming. Root `app/not-found.js` also handles unmatched URLs. (`01-app/03-api-reference/03-file-conventions/not-found.md`; `01-app/03-api-reference/04-functions/not-found.md`)
+- `redirect()` (307, or 303 for form Server Actions without JS) and `permanentRedirect()` (308), both from `next/navigation`. Call outside `try/catch`. (`01-app/03-api-reference/04-functions/redirect.md`; `01-app/03-api-reference/04-functions/permanentRedirect.md`)
+- `unauthorized()` (401) and `forbidden()` (403): experimental, require `experimental.authInterrupts`. Each has its own UI file. (`01-app/03-api-reference/04-functions/unauthorized.md`; `01-app/03-api-reference/04-functions/forbidden.md`; `01-app/03-api-reference/05-config/01-next-config-js/authInterrupts.md`)
+- Parallel routes: `@slot` folders are props of the parent layout. Every slot needs `default.js` (build error otherwise, per 16). (`01-app/03-api-reference/03-file-conventions/parallel-routes.md`; `01-app/02-guides/upgrading/version-16.md`)
+- Route groups `(name)` are excluded from the URL; multiple root layouts cause a full page load when navigating between them. (`01-app/03-api-reference/03-file-conventions/route-groups.md`)
+- Template: `template.js` remounts on every navigation for its segment; layout does not. (`01-app/03-api-reference/03-file-conventions/template.md`)
+- Private folders `_name` and `src/` placement: `01-app/01-getting-started/02-project-structure.md`; `01-app/03-api-reference/03-file-conventions/src-folder.md`.
+
+## 3. Client and server components
+
+- Default: layouts and pages are Server Components. (`01-app/01-getting-started/05-server-and-client-components.md`)
+- `'use client'` at the top of a file (before imports) marks the boundary. It cannot be inline. The imported module graph of that file goes into the client bundle. (`01-app/03-api-reference/01-directives/use-client.md`; `01-app/01-getting-started/05-server-and-client-components.md`)
+- Server Components passed as `children` or as props into a Client Component are not pulled into the client bundle (interleaving). (`01-app/01-getting-started/05-server-and-client-components.md`)
+- Props crossing the boundary must be serializable. Functions cannot cross, except Server Functions/Server Actions. (`01-app/01-getting-started/05-server-and-client-components.md`; `01-app/02-guides/server-and-client-boundary.md`)
+- React context is not supported in Server Components; create a Client provider that takes `children`. (`01-app/01-getting-started/05-server-and-client-components.md`)
+- Server-only modules: `import 'server-only'` causes a build error if used in a Client Component. `client-only` also exists. (`01-app/01-getting-started/05-server-and-client-components.md`)
+- Metadata objects and `generateMetadata` are Server Components only. (`01-app/03-api-reference/04-functions/generate-metadata.md`)
+- Client hooks (`usePathname`, `useParams`, `useSearchParams`, `useSelectedLayoutSegment(s)`, `useRouter`) are Client Component only. (`01-app/03-api-reference/04-functions/use-pathname.md`; `use-search-params.md`; `use-router.md`)
+- Server Functions (`'use server'`) are POST endpoints. Verify auth inside each one; do not rely on the layout or Proxy. (`01-app/01-getting-started/07-mutating-data.md`; `01-app/03-api-reference/03-file-conventions/proxy.md`)
+- Taint APIs (`experimental.taint`) prevent sensitive objects crossing the boundary; not a sole defence. (`01-app/03-api-reference/05-config/01-next-config-js/taint.md`)
+- Environment variables: only `NEXT_PUBLIC_` variables reach the browser bundle. (`01-app/02-guides/environment-variables.md`; `01-app/01-getting-started/05-server-and-client-components.md`)
+
+## 4. next/font and next/image
+
+next/font:
+- Google fonts: `import { Geist } from 'next/font/google'`; call with `subsets`; apply `className` on `<html>` in the root layout. Self-hosted at build time, no browser request to Google. (`01-app/01-getting-started/13-fonts.md`; `01-app/03-api-reference/02-components/font.md`)
+- Local fonts: `next/font/local`, `src` path relative to the calling file; `src` can be an array with `weight` and `style`. (`01-app/01-getting-started/13-fonts.md`; `01-app/03-api-reference/02-components/font.md`)
+- Options: `src` (local only, required), `weight` (required if not a variable font), `style`, `subsets` (Google, preloaded), `axes` (Google), `display` (default `'swap'`; `auto|block|swap|fallback|optional`), `preload` (default `true`), `fallback`, `adjustFontFallback` (Google default `true`), `variable` (CSS variable name), `declarations` (local). (`01-app/03-api-reference/02-components/font.md`)
+- Multi-word Google names use underscores (`Roboto_Mono`). Tailwind v4 usage via `@theme inline`. (`01-app/03-api-reference/02-components/font.md`)
+- Pages Router: apply fonts in `_app`. (`01-app/01-getting-started/13-fonts.md`)
+- Fonts `subsets` default, `variable` default: **not in docs**.
+
+next/image:
+- `src` and `alt` required. `width` and `height` are required unless the image is a static import or uses `fill`. `fill` requires a positioned parent. (`01-app/03-api-reference/02-components/image.md`)
+- Local images: from `public/` path or static import (static import sets width, height and `blurDataURL`). (`01-app/01-getting-started/12-images.md`; `01-app/03-api-reference/02-components/image.md`)
+- Remote images: require `images.remotePatterns` (protocol, hostname with `*`/`**`, port, pathname, search); mismatched URLs get 400. Local `src` with query strings needs `images.localPatterns` (16). (`01-app/03-api-reference/02-components/image.md`; `01-app/02-guides/upgrading/version-16.md`)
+- `sizes`: needed with `fill` or responsive layouts so the browser picks the right size. (`01-app/03-api-reference/02-components/image.md`)
+- Lazy loading is the default (`loading`); `preload` (default `false`) for LCP images. `priority` is deprecated in 16 in favour of `preload`. (`01-app/03-api-reference/02-components/image.md`)
+- `placeholder="blur"`: automatic for static imports; remote images need `blurDataURL`. (`01-app/03-api-reference/02-components/image.md`)
+- `onLoad`/`onError` require Client Components in the App Router. (`01-app/03-api-reference/02-components/image.md`)
+- Defaults: `deviceSizes` `[640,750,828,1080,1200,1920,2048,3840]`; `imageSizes` `[32,48,64,96,128,256,384]`; `qualities` `[75]`; `formats` `['image/webp']`; `minimumCacheTTL` 14400 s; `maximumRedirects` 3; `maximumResponseBody` 50 MB; `dangerouslyAllowLocalIP` false; `dangerouslyAllowSVG` false; `contentDispositionType` `attachment`. (`01-app/03-api-reference/02-components/image.md`; `01-app/03-api-reference/05-config/01-next-config-js/images.md`)
+- Default loader does not forward request headers; auth-protected images need `unoptimized`. (`01-app/03-api-reference/02-components/image.md`)
+- `images.domains` is deprecated; use `remotePatterns`. (`01-app/03-api-reference/02-components/image.md`)
+- Legacy `next/legacy/image` is deprecated; use `next/image`. (`02-pages/04-api-reference/01-components/image-legacy.md`)
+
+## 5. Configuration
+
+- Format: `next.config.js|mjs|ts`; `.cjs`/`.cts` not supported. Can export a function `(phase, { defaultConfig })`, and async since 12.1. (`01-app/03-api-reference/05-config/01-next-config-js/index.md`)
+- Top-level options (current in 16): `cacheComponents`, `cacheLife`, `cacheHandlers`, `cacheHandler` (renamed from `incrementalCacheHandlerPath`), `cacheMaxMemorySize` (default 50 MB), `partialPrefetching` (must be set explicitly with `cacheComponents`), `reactCompiler`, `turbopack`, `typedRoutes`, `serverExternalPackages`, `transpilePackages`, `output`, `images`, `headers`, `redirects`, `rewrites`, `logging`, `deploymentId`, `distDir`, `trailingSlash`, `basePath`, `assetPrefix`, `crossOrigin`, `compress`, `poweredByHeader`, `reactStrictMode`, `reactMaxHeadersLength`, `htmlLimitedBots`, `allowedDevOrigins`, `devIndicators` (`position` only), `outputHashSalt`, `instrumentationClientInject`, `skipProxyUrlNormalize`, `skipTrailingSlashRedirect`, `adapterPath`, `enablePrerenderSourceMaps` (default true), `agentRules`. Each has its own page under `01-app/03-api-reference/05-config/01-next-config-js/`.
+- Transpile packages: `transpilePackages` takes package names only (no paths or globs). Cannot appear in both `transpilePackages` and `serverExternalPackages`. (`01-app/03-api-reference/05-config/01-next-config-js/transpilePackages.md`)
+- Server packages: `serverExternalPackages` (stable since 15; long default list incl. `prisma`, `sharp`, `pg`, `mongoose`, `better-sqlite3`). (`01-app/03-api-reference/05-config/01-next-config-js/serverExternalPackages.md`)
+- Output modes: `output: 'standalone'` (creates `.next/standalone` with `server.js`; copy `public` and `.next/static` yourself); `output: 'export'` (static export; no server features). (`01-app/03-api-reference/05-config/01-next-config-js/output.md`; `01-app/02-guides/static-exports.md`)
+- Static export limits: no proxy, ISR, default image loader, draft mode, Server Actions, intercepting routes, rewrites/redirects/headers; Route Handlers only GET with `dynamic = 'force-static'`. (`01-app/02-guides/static-exports.md`)
+- Turbopack is the default bundler for `next dev` and `next build` in 16; `--webpack` opts out. A custom webpack config makes `next build` fail unless `--turbopack` or `--webpack` is passed. (`01-app/03-api-reference/08-turbopack.md`; `01-app/02-guides/upgrading/version-16.md`)
+- Turbopack config (`turbopack` top-level; formerly `experimental.turbo`): `root`, `rules`, `resolveAlias`, `resolveExtensions`, `ignoreIssue`. (`01-app/03-api-reference/05-config/01-next-config-js/turbopack.md`)
+- Experimental flags still experimental: `staleTimes`, `authInterrupts`, `useOffline`, `inlineCss`, `optimizePackageImports`, `cssChunking`, `turbopackMemoryEviction`, `taint`, `urlImports`, `mdxRs`, `serverComponentsHmrCache`, `proxyClientMaxBodySize`. (each page under `01-app/03-api-reference/05-config/01-next-config-js/`)
+- Stable/moved to top level in 16 (from `experimental.*`): `cacheComponents`, `cacheLife`, `cacheHandlers`, `reactCompiler`, `enablePrerenderSourceMaps`. `adapterPath` moved top level in 16.2. `typedRoutes` is stable. (`01-app/03-api-reference/05-config/01-next-config-js/cacheComponents.md`; `01-app/02-guides/upgrading/version-16.md`)
+- Turbopack filesystem caching: on by default for dev and build (`turbopackFileSystemCacheForDev`, `turbopackFileSystemCacheForBuild`). (`01-app/03-api-reference/05-config/01-next-config-js/turbopackFileSystemCache.md`)
+
+## 6. Renamed, removed and deprecated APIs
+
+- `middleware` renamed to `proxy`: file `proxy.ts|js`, export `proxy`. Middleware is deprecated; Proxy runs on Node.js only (edge is not supported). Codemod: `npx @next/codemod@canary middleware-to-proxy .` (`01-app/03-api-reference/03-file-conventions/proxy.md`; `01-app/02-guides/upgrading/version-16.md`)
+- `skipMiddlewareUrlNormalize` renamed to `skipProxyUrlNormalize` (16); setting both throws. (`01-app/03-api-reference/05-config/01-next-config-js/skipProxyUrlNormalize.md`)
+- `unstable_cacheLife` / `unstable_cacheTag` renamed to `cacheLife` / `cacheTag` (stable in 16). (`01-app/03-api-reference/04-functions/cacheLife.md`; `cacheTag.md`)
+- `unstable_cache` replaced by `'use cache'` in 16 (still works). (`01-app/03-api-reference/04-functions/unstable_cache.md`)
+- `unstable_noStore` deprecated in favour of `connection()`. (`01-app/03-api-reference/04-functions/unstable_noStore.md`; `connection.md`)
+- `revalidateTag(tag)` single argument is deprecated; use `revalidateTag(tag, 'max')` (TypeScript error in 16). (`01-app/03-api-reference/04-functions/revalidateTag.md`; `01-app/02-guides/upgrading/version-16.md`)
+- `updateTag` works only in Server Actions. (`01-app/03-api-reference/04-functions/updateTag.md`)
+- `experimental.ppr` removed in 16; use `cacheComponents`. `experimental.dynamicIO` and `experimental.useCache` replaced by `cacheComponents`. (`01-app/02-guides/upgrading/version-16.md`; `01-app/02-guides/migrating-to-cache-components.md`)
+- `unstable_rootParams` replaced by `next/root-params`. (`01-app/03-api-reference/04-functions/next-root-params.md`)
+- `next lint` and the `eslint` next.config option removed in 16; use the ESLint CLI. (`01-app/03-api-reference/05-config/03-eslint.md`)
+- `next export` removed; use `output: 'export'`. (`01-app/02-guides/upgrading/version-14.md`; `01-app/02-guides/static-exports.md`)
+- Synchronous `cookies()`, `headers()`, `draftMode()`, `params`, `searchParams`: async (15 allowed sync with warning; 16 removes it). (`01-app/03-api-reference/04-functions/cookies.md`; `headers.md`; `01-app/02-guides/upgrading/version-16.md`)
+- `serverRuntimeConfig` / `publicRuntimeConfig` removed in 16; use env vars. (`01-app/02-guides/upgrading/version-16.md`)
+- `devIndicators.appIsrStatus`, `buildActivity`, `buildActivityPosition` removed in 16. (`01-app/03-api-reference/05-config/01-next-config-js/devIndicators.md`)
+- AMP removed in 16. (`01-app/02-guides/upgrading/version-16.md`)
+- `experimental.turbo` renamed to `turbopack`. (`01-app/03-api-reference/05-config/01-next-config-js/turbopack.md`)
+- `serverComponentsExternalPackages` renamed to `serverExternalPackages`; `bundlePagesExternals` renamed to `bundlePagesRouterDependencies`. (`01-app/02-guides/upgrading/version-15.md`)
+- `metadata.themeColor`, `colorScheme`, `viewport` are deprecated; use the `viewport` export or `generateViewport`. (`01-app/03-api-reference/04-functions/generate-metadata.md`; `generate-viewport.md`)
+- `ImageResponse` import moved from `next/server` to `next/og` (14). (`01-app/03-api-reference/04-functions/image-response.md`)
+- Images: `layout`, `objectFit` props removed in `next/image` (legacy comparison); `images.domains` deprecated. (`02-pages/04-api-reference/01-components/image-legacy.md`; `image.md`)
+- `preferredRegion` route config deprecated; `runtime: 'edge'` deprecated. (`01-app/03-api-reference/03-file-conventions/02-route-segment-config/preferredRegion.md`; `runtime.md`)
+- `getStaticPaths` replaced by `generateStaticParams`; `fallback` replaced by `dynamicParams`. (`01-app/03-api-reference/04-functions/generate-static-params.md`; `01-app/02-guides/migrating/app-router-migration.md`)
+- `useFormState` replaced by `useActionState` (React 19, Next 15). (`01-app/02-guides/upgrading/version-15.md`)
+- `next/router` (Pages Router) and `next/compat/router` (returns `NextRouter | null` for both routers): `02-pages/04-api-reference/03-functions/use-router.md`.
+- `unstable_prefetch`, `unstable_navigation`, `unstable_instant`, `unstable_catchError`, `unstable_retry`: replaced by `prefetch()`, `navigation()`, `instant`, `catchError`, `retry` (stable names). (`01-app/03-api-reference/04-functions/prefetch.md`; `navigation.md`; `catchError.md`; `error.md`; `route-segment-config/instant.md`)
+
+## 7. Caching and rendering defaults
+
+- Model: Cache Components (`cacheComponents: true` plus `partialPrefetching: true`). Routes are dynamic by default; `'use cache'` opts a function or component in; the static shell is prerendered and dynamic parts stream in. (`01-app/01-getting-started/08-caching.md`; `01-app/03-api-reference/05-config/01-next-config-js/cacheComponents.md`)
+- Runtime APIs (`cookies()`, `headers()`, `searchParams`, `params`) make a component dynamic; wrap them in `<Suspense>` under Cache Components. Reading them outside Suspense causes a build error. (`01-app/03-api-reference/04-functions/cookies.md`; `01-app/02-guides/building.md`)
+- `connection()` waits for a real request; `io()` marks sync values (`new Date()`, `Math.random()`) as dynamic. (`01-app/03-api-reference/04-functions/connection.md`; `io.md`)
+- `'use cache'` defaults: when `cacheLife` is omitted, the `default` profile applies: stale 5 min, revalidate 15 min, expire never. Profiles: seconds (30 s / 1 s / 1 min), minutes (5 m / 1 m / 1 h), hours (5 m / 1 h / 1 d), days (5 m / 1 d / 1 w), weeks (5 m / 1 w / 30 d), max (5 m / 30 d / 1 y). (`01-app/03-api-reference/04-functions/cacheLife.md`; `01-app/01-getting-started/09-revalidating.md`)
+- Client cache: `stale` minimum 30 s enforced; static routes default 5 min; dynamic routes default 0 (`staleTimes`, experimental). Server Action revalidation clears the client cache. (`01-app/03-api-reference/04-functions/cacheLife.md`; `01-app/03-api-reference/05-config/01-next-config-js/staleTimes.md`)
+- `fetch` (extended): default cache mode is `auto no cache` (fetched once at build for static routes, every request if dynamic APIs are used); `cache: 'force-cache'` or `'no-store'`; `next: { revalidate, tags }`. GET requests with the same URL/options are memoized within one render pass (not in Route Handlers). (`01-app/03-api-reference/04-functions/fetch.md`)
+- Route handlers: GET is not cached by default (dynamic) since 15. `dynamic = 'force-static'` makes it static. (`01-app/03-api-reference/03-file-conventions/route.md`; `01-app/02-guides/upgrading/version-15.md`)
+- Prerendering build symbols: `○` static, `◐` partial prerender, `ƒ` dynamic (Cache Components); without Cache Components `●` SSG also appears. (`01-app/02-guides/building.md`)
+- ISR and revalidation: `revalidate` route config and `cacheLife` on `'use cache'`; `revalidateTag(tag, 'max')` stale-while-revalidate; `updateTag` read-your-own-writes in Server Actions. (`01-app/02-guides/how-revalidation-works.md`; `01-app/02-guides/incremental-static-regeneration.md`)
+- Cache-Control defaults: static `s-maxage=31536000`; ISR `s-maxage=revalidate, stale-while-revalidate`; dynamic `private, no-cache, no-store, max-age=0, must-revalidate`; `/_next/static` immutable for 1 year. (`01-app/02-guides/cdn-caching.md`)
+- `public/` folder: default `Cache-Control: public, max-age=0`. (`01-app/03-api-reference/03-file-conventions/public-folder.md`)
+- `x-nextjs-cache` response header: `MISS`, `STALE`, `HIT`. (`01-app/02-guides/incremental-static-regeneration.md`)
+- Partial Prefetching: one App Shell per route prefetched; `prefetch={true}` on `<Link>` for URL-dependent content. (`01-app/03-api-reference/05-config/01-next-config-js/partialPrefetching.md`)
+- Route segment configs `dynamic`, `dynamicParams`, `revalidate` and `fetchCache` are removed when Cache Components is on. (`01-app/03-api-reference/03-file-conventions/02-route-segment-config/index.md`; `01-app/02-guides/migrating-to-cache-components.md`)
+
+## 8. Metadata files, sitemap, robots, icons, OpenGraph
+
+- Metadata file conventions (`01-app/03-api-reference/03-file-conventions/01-metadata/index.md`): served with hashes in production, cached by default. If you use `proxy.ts`, exclude metadata files in the matcher. (same file; `01-app/03-api-reference/03-file-conventions/proxy.md`)
+- Icons (`01-app/03-api-reference/03-file-conventions/01-metadata/app-icons.md`): `favicon.ico` only in the `app/` root; `icon.(ico|jpg|jpeg|png|svg)` in any `app/**` segment; `apple-icon.(jpg|jpeg|png)`. Generated `icon.tsx`: `size`, `contentType`, `params` and `id` are Promises (16).
+- OpenGraph and Twitter images (`01-app/03-api-reference/03-file-conventions/01-metadata/opengraph-image.md`): `opengraph-image.(jpg|jpeg|png|gif)` and `twitter-image.*`; size limits: Twitter image up to 5 MB, OpenGraph up to 8 MB (build fails above). Generated: `export alt`, `size`, `contentType`. (same file)
+- `generateImageMetadata` returns `[{ id, alt, size, contentType }]`; the image function receives `id` as a Promise. (`01-app/03-api-reference/04-functions/generate-image-metadata.md`)
+- `ImageResponse` from `next/og` (Satori; flexbox subset; no `display: grid`; bundle size max 500 KB; fonts `ttf|otf|woff`). (`01-app/03-api-reference/04-functions/image-response.md`)
+- Sitemap (`01-app/03-api-reference/03-file-conventions/01-metadata/sitemap.md`): `sitemap.xml` or `sitemap.js|ts` returning `MetadataRoute.Sitemap`. `generateSitemaps` returns `[{ id }]` and the sitemap receives `id` as a Promise (16); URL `/…/sitemap/[id].xml`. (`01-app/03-api-reference/04-functions/generate-sitemaps.md`)
+- Robots (`01-app/03-api-reference/03-file-conventions/01-metadata/robots.md`): `robots.txt` or `robots.js|ts` returning `MetadataRoute.Robots`.
+- Manifest (`01-app/03-api-reference/03-file-conventions/01-metadata/manifest.md`): `manifest.json|webmanifest` or `manifest.js|ts` returning `MetadataRoute.Manifest`.
+- OpenGraph fields (`01-app/03-api-reference/04-functions/generate-metadata.md`): `openGraph` (title, description, url, siteName, images, videos, audio, locale, type, publishedTime, authors). OG image URLs must be absolute in config. `metadataBase` resolves relative URLs; a relative URL without `metadataBase` is a build error. `title.template` applies to child segments only.
+- Metadata merge: shallow, last segment wins; nested keys like `openGraph` are replaced entirely. (`01-app/03-api-reference/04-functions/generate-metadata.md`)
+- Unsupported as metadata (use in layout/page): `<meta http-equiv>`, `<base>`, `<noscript>`, `<style>`, `<script>`, `<link rel="stylesheet">`, preload/preconnect (use ReactDOM methods in a Client Component). (`01-app/03-api-reference/04-functions/generate-metadata.md`)
+- Streaming metadata (15.2+): HTML-limited bots (e.g. facebookexternalhit) wait for metadata; `htmlLimitedBots` config overrides the list. (`01-app/03-api-reference/05-config/01-next-config-js/htmlLimitedBots.md`)
+- Default tags: `<meta charset="utf-8">` and viewport meta always added. (`01-app/03-api-reference/04-functions/generate-metadata.md`)
+
+## 9. Other rules a Next.js site must follow
+
+- Lint: `next build` does not lint (since 16). ESLint uses `eslint-config-next` with flat config (`eslint.config.mjs`); `core-web-vitals` upgrades rules to errors. `@next/next/no-img-element` (use `next/image`), `no-html-link-for-pages` (use `next/link`), `google-font-display`, `google-font-preconnect`, `no-head-element`, `no-sync-scripts`, etc. (`01-app/03-api-reference/05-config/03-eslint.md`; `01-app/01-getting-started/01-installation.md`)
+- Accessibility: route announcer uses `document.title`, then `<h1>`, then the pathname; give each page a unique title. `eslint-plugin-jsx-a11y` rules are included. (`03-architecture/accessibility.md`)
+- TypeScript: `next build` fails on type errors unless `typescript.ignoreBuildErrors` is set. `tsconfig.json` must include `next-env.d.ts`. Route helpers `PageProps`, `LayoutProps`, `RouteContext` are global after `next dev`, `next build` or `next typegen`. TypeScript 5.1+ is required (installation). (`01-app/03-api-reference/05-config/02-typescript.md`; `01-app/01-getting-started/01-installation.md`)
+- `typedRoutes: true` type-checks `<Link href>` and router calls. (`01-app/03-api-reference/05-config/02-typescript.md`)
+- Environment variables: `.env`, `.env.local`, `.env.production`, `.env.development`; load order `process.env` > `.env.$(NODE_ENV).local` > `.env.local` (not in test) > `.env.$(NODE_ENV)` > `.env`; `NEXT_PUBLIC_` inlined at build time; `.env` files stay at the project root even with `src/`. (`01-app/02-guides/environment-variables.md`)
+- Linking: use `<Link href>` from `next/link` for internal navigation; prefetch is automatic in production; `prefetch={false}` disables it; `scroll` defaults to true. (`01-app/03-api-reference/02-components/link.md`; `01-app/01-getting-started/04-linking-and-navigating.md`)
+- Hash links and scroll: `<Link href="#id">` works; set `scroll-padding-top` to offset a sticky header; Next no longer overrides `scroll-behavior: smooth` in 16 (set `<html data-scroll-behavior="smooth">` to keep it). (`01-app/01-getting-started/04-linking-and-navigating.md`; `01-app/02-guides/upgrading/version-16.md`)
+- `router.push` must not receive untrusted URLs (XSS risk). (`01-app/03-api-reference/04-functions/use-router.md`)
+- Scripts: use `next/script` with a `strategy`; inline scripts need an `id`. (`01-app/02-guides/scripts.md`; `01-app/03-api-reference/02-components/script.md`)
+- Fonts and CSS (`01-app/01-getting-started/13-fonts.md`; `11-css.md`): global CSS imported in the root layout; `*.module.css` for scoped styles; Tailwind v4 uses `@import 'tailwindcss'` in `app/globals.css`. (`01-app/01-getting-started/11-css.md`)
+- Supported browsers: Chrome/Edge/Firefox 111+, Safari 16.4+. Node.js 20.9+. (`03-architecture/supported-browsers.md`; `01-app/01-getting-started/01-installation.md`)
+- Fast Refresh: anonymous default exports (`export default () => …`) reset component state; move exported non-component values out of component files. (`03-architecture/fast-refresh.md`)
+- Server Actions body limit 1 MB by default (`serverActions.bodySizeLimit`); allowed origins for CSRF via `serverActions.allowedOrigins`. (`01-app/02-guides/server-actions.md`; `01-app/03-api-reference/05-config/01-next-config-js/serverActions.md`)
+- Data security: DAL with `server-only`, DTOs, authorize in every Server Action and Route Handler. (`01-app/02-guides/data-security.md`; `01-app/02-guides/authentication.md`)
+- Cache Components requires the Node.js runtime; remove any `runtime` route export. (`01-app/03-api-reference/05-config/01-next-config-js/cacheComponents.md`)
+
+## Items not found in the docs
+
+- Default `subsets` for `next/font/google`: **not in docs**.
+- Default `sizes` for `next/image`: **not in docs**.
+- Exact list of all ESLint rules beyond the table in `03-eslint.md`: **not in docs**.

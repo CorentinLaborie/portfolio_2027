@@ -1,0 +1,37 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-space-8);
+  width: 100%;
+}
+
+.label {
+  color: var(--color-foreground);
+  font-size: var(--type-text-supporting-strong-font-size);
+  line-height: var(--type-text-supporting-strong-line-height);
+  font-weight: var(--type-text-supporting-strong-font-weight);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--spacing-space-14) var(--spacing-space-16);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-12);
+  background: var(--color-card);
+  color: var(--color-foreground);
+  font-family: inherit;
+  font-size: 16px;
+  line-height: var(--type-text-body-line-height);
+  resize: vertical;
+}
+
+.input::placeholder {
+  color: var(--color-muted-foreground);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 1px;
+}

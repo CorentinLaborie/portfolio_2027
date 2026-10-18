@@ -1,0 +1,102 @@
+.about {
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-block: var(--spacing-space-48);
+  padding-inline: var(--spacing-space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-space-32);
+  scroll-margin-top: var(--spacing-space-96);
+}
+
+.title {
+  margin: 0;
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-foreground);
+}
+
+.intro {
+  margin: 0;
+  max-width: 960px;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 500;
+  color: var(--color-foreground);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--spacing-space-24);
+}
+
+.cards .card {
+  padding: var(--spacing-space-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-space-12);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: var(--color-foreground);
+}
+
+.cardText {
+  margin: 0;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-foreground);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-space-12);
+}
+
+@media (min-width: 640px) {
+  .about {
+    padding-inline: var(--spacing-space-24);
+  }
+}
+
+@media (min-width: 900px) {
+  .about {
+    padding-inline: var(--spacing-space-40);
+  }
+}
+
+@media (min-width: 1024px) {
+  .about {
+    padding-inline: var(--spacing-space-48);
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .about {
+    padding-inline: var(--spacing-space-64);
+  }
+}
+
+@media (max-width: 639px) {
+  .about {
+    padding-block: var(--spacing-space-64);
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}

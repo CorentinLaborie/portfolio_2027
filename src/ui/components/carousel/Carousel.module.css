@@ -1,0 +1,161 @@
+/* From 640px up the viewport sits between two 56px gutters that hold the arrows. */
+.root {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 56px;
+  width: 100%;
+}
+
+.stage {
+  grid-row: 1;
+  grid-column: 2;
+  min-width: 0;
+}
+
+/* Groups the arrows and the counter; a plain box from 640px up, so they place as grid items. */
+.controls {
+  display: contents;
+}
+
+.viewport {
+  overflow: hidden;
+  width: 100%;
+  max-height: 720px;
+}
+
+.track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 350ms ease;
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+.imageButton {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+/* Inset so the ring stays inside the clipped viewport. */
+.imageButton:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: -2px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dialog {
+  max-width: 100vw;
+  max-height: 100vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.dialog::backdrop {
+  background: var(--color-backdrop);
+}
+
+.dialogImage {
+  display: block;
+  max-width: 100vw;
+  max-height: 90vh;
+  border-radius: var(--radius-lg);
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--spacing-space-16);
+  right: var(--spacing-space-16);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-card);
+  color: var(--color-foreground);
+  box-shadow: var(--shadow-raised);
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--color-accent);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+.previous {
+  grid-row: 1;
+  grid-column: 1;
+  justify-self: start;
+  align-self: center;
+}
+
+.next {
+  grid-row: 1;
+  grid-column: 3;
+  justify-self: end;
+  align-self: center;
+}
+
+.counter {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  margin: var(--spacing-space-12) 0 0;
+  min-width: 5ch;
+  color: var(--color-muted-foreground);
+  font-size: var(--type-text-supporting-strong-font-size);
+  line-height: var(--type-text-supporting-strong-line-height);
+  font-weight: var(--type-text-supporting-strong-font-weight);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Below 640px: full-width viewport, with previous, counter and next in a centred row below it. */
+@media (max-width: 639px) {
+  .root {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-space-12);
+    margin-top: var(--spacing-space-12);
+  }
+
+  .counter {
+    margin: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    transition: none;
+  }
+}
