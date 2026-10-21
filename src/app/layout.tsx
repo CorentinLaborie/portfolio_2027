@@ -4,6 +4,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "@/ui/styles/tokens.css";
 import "@/ui/styles/globals.css";
 import { commonEn } from "../content/en/common";
+import { siteUrl } from "../lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,8 +21,17 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: commonEn.brandName,
   description: commonEn.metaDescription,
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: commonEn.brandName,
+    description: commonEn.metaDescription,
+    type: "website",
+    locale: "en_US",
+    alternateLocale: ["fr_FR"],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

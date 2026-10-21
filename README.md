@@ -28,10 +28,10 @@ pm start sous un gestionnaire de processus (systemd), derrière un reverse proxy
 
 - BREVO_API_KEY : clé API Brevo pour envoyer les messages du formulaire de contact. Pas encore branchée : sans elle, le formulaire répond 503.
 - MAIL_FROM_ADDRESS : adresse d'expédition vérifiée chez Brevo.
+- SITE_URL : adresse publique du site (sitemap, robots, métadonnées). Sans elle, la valeur est http://localhost:3000.
 
 Ces valeurs ne vont jamais dans Git.
 
 ## Formulaire de contact
 
-POST /api/contact reçoit 
-ame, email, phone, message (JSON). Les règles de validation sont dans src/lib/contact/validate.ts. Un champ website rempli est traité comme un robot : rien n'est envoyé.
+POST /api/contact reçoit name, email, phone, message (JSON). Les règles de validation sont dans src/lib/contact/validate.ts. Un champ company_website rempli est traité comme un robot : rien n'est envoyé. Limites : 5 messages par adresse IP toutes les 10 minutes (429), corps de 10 Ko au plus (413), Content-Type application/json obligatoire (415). Le proxy doit remplacer (et non compléter) l'en-tête X-Forwarded-For.
