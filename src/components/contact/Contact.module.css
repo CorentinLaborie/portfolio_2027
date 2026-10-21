@@ -8,6 +8,7 @@
   margin-inline: auto;
   padding-block: var(--spacing-space-112);
   padding-inline: var(--spacing-space-16);
+  scroll-margin-top: var(--spacing-space-96);
 }
 
 .title {
@@ -30,6 +31,21 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-space-20);
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-space-8);
+}
+
+/* No error colour token exists yet: the message is set in bold text, with the field's own style. */
+.fieldError {
+  margin: 0;
+  color: var(--color-foreground);
+  font-size: var(--type-text-supporting-strong-font-size);
+  line-height: var(--type-text-supporting-strong-line-height);
+  font-weight: var(--type-text-supporting-strong-font-weight);
 }
 
 .submit {

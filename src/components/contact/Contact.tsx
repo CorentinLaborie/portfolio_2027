@@ -1,10 +1,17 @@
 "use client";
 
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useId, useState, type FormEvent, type ReactNode } from "react";
 import { Button, TextArea, TextField } from "@/ui";
 import type { ContactContent, ContactIcon } from "../../content/fr/contact";
 import { anchors, sectionId } from "../../content/shared";
 import styles from "./Contact.module.css";
+
+const fieldNames = ["name", "email", "phone", "message"] as const;
+type FieldName = (typeof fieldNames)[number];
+
+function isFieldName(value: unknown): value is FieldName {
+  return typeof value === "string" && (fieldNames as readonly string[]).includes(value);
+}
 
 const linkIcons: Record<ContactIcon, ReactNode> = {
   mail: (
@@ -30,8 +37,23 @@ type ContactProps = { content: ContactContent };
 type SendState = "idle" | "sending" | "sent" | "error";
 
 export function Contact({ content }: ContactProps) {
-  const { email, fields, messages } = content;
+  const { fields, messages } = content;
   const [state, setState] = useState<SendState>("idle");
+  const [invalidField, setInvalidField] = useState<FieldName | null>(null);
+  const baseId = useId();
+
+  const errorId = (field: FieldName) => `${baseId}-${field}-error`;
+
+  // The field the server refused, linked to its error text with aria-describedby.
+  const fieldAria = (field: FieldName) =>
+    invalidField === field ? { "aria-invalid": true, "aria-describedby": errorId(field) } : {};
+
+  const fieldError = (field: FieldName) =>
+    invalidField === field ? (
+      <p id={errorId(field)} className={styles.fieldError}>
+        {messages.invalidField}
+      </p>
+    ) : null;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -40,6 +62,7 @@ export function Contact({ content }: ContactProps) {
     const read = (name: string) => String(data.get(name) ?? "");
 
     setState("sending");
+    setInvalidField(null);
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -49,10 +72,12 @@ export function Contact({ content }: ContactProps) {
           email: read("email"),
           phone: read("phone"),
           message: read("message"),
-          website: read("website"),
+          company_website: read("company_website"),
         }),
       });
       if (!response.ok) {
+        const data = (await response.json().catch(() => null)) as { field?: unknown } | null;
+        setInvalidField(isFieldName(data?.field) ? data.field : null);
         setState("error");
         return;
       }
@@ -69,14 +94,46 @@ export function Contact({ content }: ContactProps) {
 
       <div className={styles.layout}>
         <form aria-label={content.formLabel} className={styles.form} onSubmit={handleSubmit}>
-          <TextField label={fields.name} name="name" type="text" autoComplete="name" required />
-          <TextField label={fields.email} name="email" type="email" autoComplete="email" required />
-          <TextField label={fields.phone} name="phone" type="tel" autoComplete="tel" />
-          <TextArea label={fields.message} name="message" autoComplete="off" />
-          {/* Hidden from people and screen readers: a filled field marks a bot. */}
+          <div className={styles.fieldGroup}>
+            <TextField
+              label={fields.name}
+              name="name"
+              type="text"
+              autoComplete="name"
+              required
+              {...fieldAria("name")}
+            />
+            {fieldError("name")}
+          </div>
+          <div className={styles.fieldGroup}>
+            <TextField
+              label={fields.email}
+              name="email"
+              type="email"
+              autoComplete="email"
+              required
+              {...fieldAria("email")}
+            />
+            {fieldError("email")}
+          </div>
+          <div className={styles.fieldGroup}>
+            <TextField label={fields.phone} name="phone" type="tel" autoComplete="tel" {...fieldAria("phone")} />
+            {fieldError("phone")}
+          </div>
+          <div className={styles.fieldGroup}>
+            <TextArea
+              label={fields.message}
+              name="message"
+              autoComplete="off"
+              required
+              {...fieldAria("message")}
+            />
+            {fieldError("message")}
+          </div>
+          {/* Hidden from people and screen readers, out of reach of autofill: a filled field marks a bot. */}
           <input
             type="text"
-            name="website"
+            name="company_website"
             tabIndex={-1}
             autoComplete="off"
             aria-hidden="true"
@@ -92,31 +149,35 @@ export function Contact({ content }: ContactProps) {
         </form>
 
         <div className={styles.links}>
-          {content.links.map((link) => (
-            <a
-              key={link.href}
-              className={styles.linkRow}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                className={styles.linkIcon}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-                focusable="false"
+          {content.links.map((link) => {
+            // Web addresses open in a new tab; mailto and tel links open in the current one.
+            const webLink = link.href.startsWith("https://");
+            return (
+              <a
+                key={link.href}
+                className={styles.linkRow}
+                href={link.href}
+                target={webLink ? "_blank" : undefined}
+                rel={webLink ? "noopener noreferrer" : undefined}
               >
-                {linkIcons[link.icon]}
-              </svg>
-              <span className={styles.linkLabel}>{link.label}</span>
-              <span aria-hidden="true">→</span>
-            </a>
-          ))}
+                <svg
+                  className={styles.linkIcon}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  {linkIcons[link.icon]}
+                </svg>
+                <span className={styles.linkLabel}>{link.label}</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>

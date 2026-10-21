@@ -7,7 +7,6 @@ type ContactLink = { label: string; href: string; icon: ContactIcon };
 export type ContactContent = {
   title: string;
   formLabel: string;
-  email: string;
   fields: {
     name: string;
     email: string;
@@ -19,6 +18,7 @@ export type ContactContent = {
     sending: string;
     sent: string;
     error: string;
+    invalidField: string;
   };
   links: ContactLink[];
 };
@@ -26,7 +26,6 @@ export type ContactContent = {
 export const contactContent: ContactContent = {
   title: "Contact",
   formLabel: "Contact",
-  email: contactEmail,
   fields: {
     name: "Votre nom",
     email: "E-mail",
@@ -38,6 +37,7 @@ export const contactContent: ContactContent = {
     sending: "Envoi en cours…",
     sent: "Merci, votre message a bien été envoyé.",
     error: "Votre message n’a pas pu être envoyé. Réessayez, ou écrivez-nous directement par e-mail.",
+    invalidField: "Vérifiez ce champ.",
   },
   links: [
     { label: contactEmail, href: `mailto:${contactEmail}`, icon: "mail" },
