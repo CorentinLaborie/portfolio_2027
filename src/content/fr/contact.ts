@@ -15,7 +15,11 @@ export type ContactContent = {
     message: string;
   };
   submitLabel: string;
-  mailSubject: string;
+  messages: {
+    sending: string;
+    sent: string;
+    error: string;
+  };
   links: ContactLink[];
 };
 
@@ -30,7 +34,11 @@ export const contactContent: ContactContent = {
     message: "Quel est votre message ?",
   },
   submitLabel: "Envoyer",
-  mailSubject: "Contact depuis le site",
+  messages: {
+    sending: "Envoi en cours…",
+    sent: "Merci, votre message a bien été envoyé.",
+    error: "Votre message n’a pas pu être envoyé. Réessayez, ou écrivez-nous directement par e-mail.",
+  },
   links: [
     { label: contactEmail, href: `mailto:${contactEmail}`, icon: "mail" },
     { label: "+33650510581", href: "tel:+33650510581", icon: "phone" },

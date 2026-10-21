@@ -12,7 +12,11 @@ export const contactContent: ContactContent = {
     message: "What is your message",
   },
   submitLabel: "Send",
-  mailSubject: "Contact from the website",
+  messages: {
+    sending: "Sending…",
+    sent: "Thank you, your message has been sent.",
+    error: "Your message could not be sent. Try again, or write to me directly by e-mail.",
+  },
   links: [
     { label: contactEmail, href: `mailto:${contactEmail}`, icon: "mail" },
     { label: "+33650510581", href: "tel:+33650510581", icon: "phone" },

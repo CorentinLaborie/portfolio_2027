@@ -1,6 +1,6 @@
 "use client";
 
-import type { FormEvent, ReactNode } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
 import { Button, TextArea, TextField } from "@/ui";
 import type { ContactContent, ContactIcon } from "../../content/fr/contact";
 import { anchors, sectionId } from "../../content/shared";
@@ -27,23 +27,40 @@ const linkIcons: Record<ContactIcon, ReactNode> = {
 
 type ContactProps = { content: ContactContent };
 
+type SendState = "idle" | "sending" | "sent" | "error";
+
 export function Contact({ content }: ContactProps) {
-  const { email, fields } = content;
+  const { email, fields, messages } = content;
+  const [state, setState] = useState<SendState>("idle");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const data = new FormData(form);
     const read = (name: string) => String(data.get(name) ?? "");
-    const body = [
-      { label: fields.name, value: read("name") },
-      { label: fields.email, value: read("email") },
-      { label: fields.phone, value: read("phone") },
-      { label: fields.message, value: read("message") },
-    ]
-      .map((entry) => `${entry.label}: ${entry.value}`)
-      .join("\n");
 
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(content.mailSubject)}&body=${encodeURIComponent(body)}`;
+    setState("sending");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          name: read("name"),
+          email: read("email"),
+          phone: read("phone"),
+          message: read("message"),
+          website: read("website"),
+        }),
+      });
+      if (!response.ok) {
+        setState("error");
+        return;
+      }
+      form.reset();
+      setState("sent");
+    } catch {
+      setState("error");
+    }
   }
 
   return (
@@ -56,9 +73,22 @@ export function Contact({ content }: ContactProps) {
           <TextField label={fields.email} name="email" type="email" autoComplete="email" required />
           <TextField label={fields.phone} name="phone" type="tel" autoComplete="tel" />
           <TextArea label={fields.message} name="message" autoComplete="off" />
-          <Button type="submit" className={styles.submit}>
-            {content.submitLabel}
+          {/* Hidden from people and screen readers: a filled field marks a bot. */}
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}
+          />
+          <Button type="submit" className={styles.submit} disabled={state === "sending"}>
+            {state === "sending" ? messages.sending : content.submitLabel}
           </Button>
+          <p role="status" aria-live="polite">
+            {state === "sent" ? messages.sent : null}
+            {state === "error" ? messages.error : null}
+          </p>
         </form>
 
         <div className={styles.links}>
