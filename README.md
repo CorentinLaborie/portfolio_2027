@@ -26,7 +26,7 @@ pm start sous un gestionnaire de processus (systemd), derrière un reverse proxy
 
 ## Variables d'environnement
 
-- BREVO_API_KEY : clé API Brevo pour envoyer les messages du formulaire de contact. Pas encore branchée : sans elle, le formulaire répond 503.
+- BREVO_API_KEY : clé API Brevo pour envoyer les messages du formulaire de contact. Sans elle (ou sans MAIL_FROM_ADDRESS), le formulaire répond 503.
 - MAIL_FROM_ADDRESS : adresse d'expédition vérifiée chez Brevo.
 - SITE_URL : adresse publique du site (sitemap, robots, métadonnées). Sans elle, la valeur est http://localhost:3000.
 
