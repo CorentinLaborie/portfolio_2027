@@ -31,7 +31,6 @@ export function Projects({ content }: ProjectsProps) {
           options={content.options}
           value={selected}
           onChange={(value) => setSelected(value === "micro" ? "micro" : "y")}
-          triggerLabel={content.triggerLabel}
         />
       </div>
 

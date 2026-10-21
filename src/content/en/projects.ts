@@ -3,7 +3,6 @@ import type { ProjectsContent } from "../fr/projects";
 export const projectsContent: ProjectsContent = {
   title: "Projects",
   selectLabel: "Project",
-  triggerLabel: "Choose a project",
   options: [
     { value: "y", label: "Y" },
     { value: "micro", label: "My Mock Micro Investor" },

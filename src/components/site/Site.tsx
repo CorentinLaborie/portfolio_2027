@@ -87,7 +87,7 @@ export function Site({ fr, en }: SiteProps) {
         <Projects content={content.projects} />
         <Contact content={content.contact} />
       </main>
-      <Footer>{common.footerText}</Footer>
+      <Footer>{common.footerText.replace("{year}", String(new Date().getFullYear()))}</Footer>
     </>
   );
 }

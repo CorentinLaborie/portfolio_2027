@@ -37,6 +37,24 @@ export function SiteHeader({ brand, links, languageSwitch, navLabel, menuLabel, 
       if (event.key === "Escape") {
         setOpen(false);
         burgerRef.current?.focus();
+        return;
+      }
+
+      // Focus stays in the open panel: Tab from its last item goes to the first, and Shift+Tab back.
+      if (event.key === "Tab") {
+        const items = Array.from(navRef.current?.querySelectorAll<HTMLElement>("a[href], button") ?? []);
+        const first = items[0];
+        const last = items[items.length - 1];
+        if (!first || !last) return;
+
+        const inside = navRef.current?.contains(document.activeElement) ?? false;
+        if (event.shiftKey && (!inside || document.activeElement === first)) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && (!inside || document.activeElement === last)) {
+          event.preventDefault();
+          first.focus();
+        }
       }
     }
 

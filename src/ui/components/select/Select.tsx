@@ -6,18 +6,19 @@ import styles from "./Select.module.css";
 type SelectOption = { value: string; label: string };
 
 type SelectProps = {
-  /** Accessible name of the listbox. */
+  /** Accessible name of the selector: the trigger and the listbox are both named with it. */
   label: string;
   options: SelectOption[];
   value: string;
   onChange: (value: string) => void;
-  /** Text shown on the trigger button. */
-  triggerLabel: string;
 };
 
-export function Select({ label, options, value, onChange, triggerLabel }: SelectProps) {
+export function Select({ label, options, value, onChange }: SelectProps) {
   const [open, setOpen] = useState(false);
+  const labelId = useId();
+  const triggerId = useId();
   const listId = useId();
+  const current = options.find((option) => option.value === value);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
@@ -72,16 +73,21 @@ export function Select({ label, options, value, onChange, triggerLabel }: Select
 
   return (
     <div className={styles.root} onBlur={handleBlur} onKeyDown={handleKeyDown}>
+      <span id={labelId} className={styles.visuallyHidden}>
+        {label}
+      </span>
       <button
         ref={triggerRef}
+        id={triggerId}
         type="button"
         className={styles.trigger}
+        aria-labelledby={`${labelId} ${triggerId}`}
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-controls={open ? listId : undefined}
-        onClick={() => setOpen((current) => !current)}
+        onClick={() => setOpen((state) => !state)}
       >
-        <span>{triggerLabel}</span>
+        <span>{current?.label}</span>
         <svg
           className={styles.chevron}
           width="16"

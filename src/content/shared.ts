@@ -1,9 +1,9 @@
 export const contactEmail = "corentin.laborie@epitech.eu";
 
 export const anchors = {
-  home: "#accueil",
+  home: "#home",
   about: "#about",
-  projects: "#projets",
+  projects: "#projects",
   contact: "#contact",
 } as const;
 

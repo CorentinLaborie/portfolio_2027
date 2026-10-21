@@ -25,5 +25,5 @@ export const commonFr: CommonContent = {
   languageLabel: "Langue",
   menuLabel: "Menu",
   closeLabel: "Fermer",
-  footerText: "© 2026 Corentin Laborie",
+  footerText: "© {year} Corentin Laborie",
 };

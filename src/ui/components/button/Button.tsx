@@ -26,7 +26,8 @@ export function Button({
     .join(" ");
 
   if (rest.href !== undefined) {
-    // Same-page anchors use next/link and stay in this tab; every other destination opens in a new one.
+    // Same-page anchors use next/link and stay in this tab. Web addresses open in a new one.
+    // mailto links stay in this tab: a new tab would open blank.
     if (rest.href.startsWith("#")) {
       return (
         <Link className={classes} {...rest}>
@@ -34,8 +35,15 @@ export function Button({
         </Link>
       );
     }
+    if (rest.href.startsWith("https://")) {
+      return (
+        <a className={classes} target="_blank" rel="noopener noreferrer" {...rest}>
+          {children}
+        </a>
+      );
+    }
     return (
-      <a className={classes} target="_blank" rel="noopener noreferrer" {...rest}>
+      <a className={classes} {...rest}>
         {children}
       </a>
     );

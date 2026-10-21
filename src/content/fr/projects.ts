@@ -9,7 +9,6 @@ type ProjectOption = { value: ProjectId; label: string };
 export type ProjectsContent = {
   title: string;
   selectLabel: string;
-  triggerLabel: string;
   options: ProjectOption[];
   carousel: {
     label: string;
@@ -39,7 +38,6 @@ export type ProjectsContent = {
 export const projectsContent: ProjectsContent = {
   title: "Projets",
   selectLabel: "Projet",
-  triggerLabel: "Choisir un projet",
   options: [
     { value: "y", label: "Y" },
     { value: "micro", label: "My Mock Micro Investor" },
