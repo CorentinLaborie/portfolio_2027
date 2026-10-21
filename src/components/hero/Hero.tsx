@@ -34,7 +34,6 @@ export function Hero({ content }: HeroProps) {
         </div>
       </div>
       <div className={styles.portrait}>
-        <div className={styles.offset} aria-hidden="true" />
         <Image
           className={styles.image}
           src={content.portrait.src}
