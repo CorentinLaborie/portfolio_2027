@@ -29,7 +29,7 @@ export const projectsContent: ProjectsContent = {
   y: {
     title: "Y, the social network that makes you think.",
     description:
-      "A feed of questions instead of a feed of reactions. Someone asks a question, others react (Like, Disagree, Y), and the conversation only opens at 50 Y. Adults only: age verification through VerifAge protects minors at sign-up.",
+      "A feed of questions instead of a feed of reactions. Someone asks a question, others react (Like, Disagree, Y), and the conversation only opens at 50 Y. Adults only: the age declared at sign-up, from the birth date, keeps minors out.",
     url: "https://y.corentin-laborie.com",
     hashtags: ["#online_life", "#irl_vs_online"],
     stack: ["TypeScript", "Next.js", "NestJS", "PostgreSQL", "Prisma", "Docker"],
