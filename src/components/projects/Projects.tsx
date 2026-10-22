@@ -1,15 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Button, Carousel, Logo, Pill } from "@/ui";
-import type { ProjectId, ProjectsContent } from "../../content/fr/projects";
+import type { ProjectId, ProjectKind, ProjectsContent } from "../../content/fr/projects";
 import { anchors, sectionId } from "../../content/shared";
 import styles from "./Projects.module.css";
 
 type ProjectsProps = { content: ProjectsContent };
 
+const kinds: ProjectKind[] = ["professional", "personal"];
+
 export function Projects({ content }: ProjectsProps) {
-  const [selected, setSelected] = useState<ProjectId>("y");
+  const [selected, setSelected] = useState<ProjectId>("empire");
 
   const slideLabel = (current: number, total: number) =>
     content.carousel.slideOf
@@ -25,17 +28,26 @@ export function Projects({ content }: ProjectsProps) {
     <section id={sectionId(anchors.projects)} className={styles.section}>
       <h2 className={styles.title}>{content.title}</h2>
 
-      <div role="group" aria-label={content.selectLabel} className={styles.chips}>
-        {content.options.map((option) => (
-          <button
-            key={option.value}
-            type="button"
-            className={styles.chip}
-            aria-pressed={option.value === selected}
-            onClick={() => setSelected(option.value)}
-          >
-            {option.label}
-          </button>
+      <div role="group" aria-label={content.selectLabel} className={styles.groups}>
+        {kinds.map((kind) => (
+          <div key={kind} className={styles.group}>
+            <p className={styles.groupTitle}>{content.groupLabels[kind]}</p>
+            <div role="group" aria-label={content.groupLabels[kind]} className={styles.chips}>
+              {content.options
+                .filter((option) => option.kind === kind)
+                .map((option) => (
+                  <button
+                    key={option.value}
+                    type="button"
+                    className={styles.chip}
+                    aria-pressed={option.value === selected}
+                    onClick={() => setSelected(option.value)}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+            </div>
+          </div>
         ))}
       </div>
 
@@ -86,6 +98,15 @@ export function Projects({ content }: ProjectsProps) {
           ) : selected === "empire" ? (
             <div className={styles.yContent}>
               <div className={styles.info}>
+                <div className={styles.logo}>
+                  <Image
+                    src={content.empire.logo.src}
+                    alt={content.empire.logo.alt}
+                    width={content.empire.logo.width}
+                    height={content.empire.logo.height}
+                    className={styles.empireLogo}
+                  />
+                </div>
                 <div className={styles.intro}>
                   <h3 className={styles.yTitle}>{content.empire.title}</h3>
                   <p className={styles.description}>{content.empire.description}</p>

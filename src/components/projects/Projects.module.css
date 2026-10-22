@@ -20,10 +20,37 @@
   color: var(--color-foreground);
 }
 
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-space-16);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-space-8);
+}
+
+.groupTitle {
+  margin: 0;
+  color: var(--color-muted-foreground);
+  font-size: var(--type-text-supporting-strong-font-size);
+  line-height: var(--type-text-supporting-strong-line-height);
+  font-weight: 700;
+}
+
 .chips {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-space-8);
+}
+
+.empireLogo {
+  display: block;
+  width: 240px;
+  max-width: 100%;
+  height: auto;
 }
 
 .chip {

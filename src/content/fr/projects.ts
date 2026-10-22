@@ -1,16 +1,20 @@
 import type { Carousel } from "@/ui";
 
-export const projectIds = ["y", "micro", "empire"] as const;
+export const projectIds = ["empire", "y", "micro"] as const;
 
 export type ProjectId = (typeof projectIds)[number];
 
+/** Professional projects are listed first, then the personal ones. */
+export type ProjectKind = "professional" | "personal";
+
 type CarouselSlide = Parameters<typeof Carousel>[0]["slides"][number];
 
-type ProjectOption = { value: ProjectId; label: string };
+type ProjectOption = { value: ProjectId; label: string; kind: ProjectKind };
 
 export type ProjectsContent = {
   title: string;
   selectLabel: string;
+  groupLabels: Record<ProjectKind, string>;
   options: ProjectOption[];
   carousel: {
     label: string;
@@ -43,6 +47,7 @@ export type ProjectsContent = {
     url: string;
     linkLabel: string;
     stack: string[];
+    logo: { src: string; alt: string; width: number; height: number };
     carouselLabel: string;
     slides: CarouselSlide[];
   };
@@ -51,10 +56,11 @@ export type ProjectsContent = {
 export const projectsContent: ProjectsContent = {
   title: "Projets",
   selectLabel: "Projet",
+  groupLabels: { professional: "Professionnels", personal: "Personnels" },
   options: [
-    { value: "y", label: "Y" },
-    { value: "micro", label: "My Mock Micro Investor" },
-    { value: "empire", label: "L’Empire du Malt" },
+    { value: "empire", label: "L’Empire du Malt", kind: "professional" },
+    { value: "y", label: "Y", kind: "personal" },
+    { value: "micro", label: "My Mock Micro Investor", kind: "personal" },
   ],
   carousel: {
     label: "Captures d’écran de Y",
@@ -95,13 +101,13 @@ export const projectsContent: ProjectsContent = {
     url: "https://lempiredumalt.fr",
     linkLabel: "Voir le projet",
     stack: ["Bubble.io", "Node.js", "Express", "Vercel"],
+    logo: { src: "/images/empire-logo.png", alt: "Logo de L’Empire du Malt", width: 400, height: 98 },
     carouselLabel: "Captures d’écran de L’Empire du Malt",
     slides: [
       { src: "/images/empire-home.jpg", alt: "Accueil de L’Empire du Malt sur ordinateur", width: 800, height: 600 },
       { src: "/images/empire-about.jpg", alt: "Page Qui sommes-nous sur ordinateur", width: 800, height: 600 },
       { src: "/images/empire-gerzat-menu.jpg", alt: "Carte de l’établissement de Gerzat sur ordinateur", width: 800, height: 600 },
       { src: "/images/empire-mobile-home.jpg", alt: "Accueil de L’Empire du Malt sur mobile", width: 375, height: 812 },
-      { src: "/images/empire-mobile-about.jpg", alt: "Page Qui sommes-nous sur mobile", width: 375, height: 812 },
     ],
   },
 };
