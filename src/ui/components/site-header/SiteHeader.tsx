@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
+import { cycleFocusIndex } from "./cycle-focus";
 import styles from "./SiteHeader.module.css";
 
 type HeaderLink = { label: string; href: string };
@@ -40,20 +41,14 @@ export function SiteHeader({ brand, links, languageSwitch, navLabel, menuLabel, 
         return;
       }
 
-      // Focus stays in the open panel: Tab from its last item goes to the first, and Shift+Tab back.
+      // Focus stays in the open panel: the links, then the close button (the burger), then back to the first link.
       if (event.key === "Tab") {
-        const items = Array.from(navRef.current?.querySelectorAll<HTMLElement>("a[href], button") ?? []);
-        const first = items[0];
-        const last = items[items.length - 1];
-        if (!first || !last) return;
-
-        const inside = navRef.current?.contains(document.activeElement) ?? false;
-        if (event.shiftKey && (!inside || document.activeElement === first)) {
+        const links = Array.from(navRef.current?.querySelectorAll<HTMLElement>("a[href], button") ?? []);
+        const items = burgerRef.current ? [...links, burgerRef.current] : links;
+        const next = cycleFocusIndex(items.length, items.indexOf(document.activeElement as HTMLElement), event.shiftKey);
+        if (next !== null) {
           event.preventDefault();
-          last.focus();
-        } else if (!event.shiftKey && (!inside || document.activeElement === last)) {
-          event.preventDefault();
-          first.focus();
+          items[next]?.focus();
         }
       }
     }
