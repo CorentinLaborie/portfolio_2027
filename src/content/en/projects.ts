@@ -6,6 +6,7 @@ export const projectsContent: ProjectsContent = {
   options: [
     { value: "y", label: "Y" },
     { value: "micro", label: "My Mock Micro Investor" },
+    { value: "empire", label: "L’Empire du Malt" },
   ],
   carousel: {
     label: "Y screenshots",
@@ -38,5 +39,13 @@ export const projectsContent: ProjectsContent = {
   micro: {
     title: "My Mock Micro Investor",
     description: "Project under construction.",
+  },
+  empire: {
+    title: "L’Empire du Malt",
+    description:
+      "Showcase website for a network of independent beer bars and shops in France (Clermont-Ferrand, Mozac, Gerzat and Saint-Gaudens). Brand story, locations map, and a form to rent a beer tap. A back-office connected to the cash registers shows only the products in stock on the menu, and lets the team control the content of the site’s pages. Age check on entry, responsive on mobile and desktop.",
+    url: "https://lempiredumalt.fr",
+    linkLabel: "View project",
+    stack: ["Bubble.io", "Node.js", "Express", "Vercel"],
   },
 };

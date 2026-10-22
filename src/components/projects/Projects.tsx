@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button, Carousel, Logo, Pill, Select } from "@/ui";
-import type { ProjectId, ProjectsContent } from "../../content/fr/projects";
+import { toProjectId, type ProjectId, type ProjectsContent } from "../../content/fr/projects";
 import { anchors, sectionId } from "../../content/shared";
 import styles from "./Projects.module.css";
 
@@ -30,7 +30,7 @@ export function Projects({ content }: ProjectsProps) {
           label={content.selectLabel}
           options={content.options}
           value={selected}
-          onChange={(value) => setSelected(value === "micro" ? "micro" : "y")}
+          onChange={(value) => setSelected(toProjectId(value))}
         />
       </div>
 
@@ -76,6 +76,23 @@ export function Projects({ content }: ProjectsProps) {
                   counterLabel={counterLabel}
                   slideLabel={slideLabel}
                 />
+              </div>
+            </div>
+          ) : selected === "empire" ? (
+            <div className={styles.yContent}>
+              <div className={styles.info}>
+                <div className={styles.intro}>
+                  <h3 className={styles.yTitle}>{content.empire.title}</h3>
+                  <p className={styles.description}>{content.empire.description}</p>
+                </div>
+                <div className={styles.tags}>
+                  {content.empire.stack.map((item) => (
+                    <Pill key={item}>{item}</Pill>
+                  ))}
+                </div>
+                <Button href={content.empire.url} className={styles.projectButton}>
+                  {content.empire.linkLabel}
+                </Button>
               </div>
             </div>
           ) : (

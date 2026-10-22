@@ -1,6 +1,13 @@
 import type { Carousel } from "@/ui";
 
-export type ProjectId = "y" | "micro";
+export const projectIds = ["y", "micro", "empire"] as const;
+
+export type ProjectId = (typeof projectIds)[number];
+
+/** Turns the value of the project selector back into a project. Unknown values fall back to Y. */
+export function toProjectId(value: string): ProjectId {
+  return projectIds.find((id) => id === value) ?? "y";
+}
 
 type CarouselSlide = Parameters<typeof Carousel>[0]["slides"][number];
 
@@ -35,6 +42,13 @@ export type ProjectsContent = {
     title: string;
     description: string;
   };
+  empire: {
+    title: string;
+    description: string;
+    url: string;
+    linkLabel: string;
+    stack: string[];
+  };
 };
 
 export const projectsContent: ProjectsContent = {
@@ -43,6 +57,7 @@ export const projectsContent: ProjectsContent = {
   options: [
     { value: "y", label: "Y" },
     { value: "micro", label: "My Mock Micro Investor" },
+    { value: "empire", label: "L’Empire du Malt" },
   ],
   carousel: {
     label: "Captures d’écran de Y",
@@ -75,5 +90,13 @@ export const projectsContent: ProjectsContent = {
   micro: {
     title: "My Mock Micro Investor",
     description: "Projet en cours de construction.",
+  },
+  empire: {
+    title: "L’Empire du Malt",
+    description:
+      "Site vitrine d’un réseau de bars et caves à bière indépendants, présent à Clermont-Ferrand, Mozac, Gerzat et Saint-Gaudens. Présentation de la marque, carte des établissements, et formulaire pour louer une tireuse. Un back-office relié aux caisses n’affiche sur la carte que les produits en stock, et permet de contrôler le contenu des pages du site. Vérification de majorité à l’entrée, version mobile et ordinateur.",
+    url: "https://lempiredumalt.fr",
+    linkLabel: "Voir le projet",
+    stack: ["Bubble.io", "Node.js", "Express", "Vercel"],
   },
 };
