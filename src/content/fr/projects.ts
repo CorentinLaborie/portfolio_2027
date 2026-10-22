@@ -84,7 +84,7 @@ export const projectsContent: ProjectsContent = {
   y: {
     title: "Y, le réseau social qui vous fait réfléchir.",
     description:
-      "Un fil de questions au lieu d’un fil de réactions. On pose une question, les autres réagissent (J’aime, Pas d’accord, Y), et la conversation ne s’ouvre qu’à 50 Y. Réservé aux adultes : l’âge déclaré à l’inscription, à partir de la date de naissance, écarte les mineurs.",
+      "Un fil de questions au lieu d’un fil de réactions. On pose une question, les autres réagissent (J’aime, Pas d’accord, Y), et la conversation ne s’ouvre qu’à 50 Y. Réservé aux adultes : l’âge déclaré à l’inscription, à partir de la date de naissance, écarte les mineurs. Projet en cours.",
     url: "https://y.corentin-laborie.com",
     linkLabel: "Voir le projet",
     hashtags: ["#online_life", "#irl_vs_online"],
