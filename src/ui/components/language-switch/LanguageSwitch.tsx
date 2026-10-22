@@ -1,18 +1,17 @@
 import { Fragment } from "react";
 import styles from "./LanguageSwitch.module.css";
 
-type LanguageOption = { code: string; label: string };
+type LanguageOption = { code: string; label: string; href: string };
 
 type LanguageSwitchProps = {
   locales: LanguageOption[];
   currentLocale: string;
-  /** Called with the code of the language that was clicked. */
-  onChange: (locale: string) => void;
   /** Accessible name of the language group. */
   languageLabel: string;
 };
 
-export function LanguageSwitch({ locales, currentLocale, onChange, languageLabel }: LanguageSwitchProps) {
+/** Each option is a link to that language's address, so the page itself changes language. */
+export function LanguageSwitch({ locales, currentLocale, languageLabel }: LanguageSwitchProps) {
   return (
     <div role="group" aria-label={languageLabel} className={styles.switch}>
       {locales.map((locale, index) => (
@@ -22,15 +21,14 @@ export function LanguageSwitch({ locales, currentLocale, onChange, languageLabel
               |
             </span>
           ) : null}
-          <button
-            type="button"
+          <a
+            href={locale.href}
             lang={locale.code}
             className={styles.button}
-            aria-pressed={locale.code === currentLocale}
-            onClick={() => onChange(locale.code)}
+            aria-current={locale.code === currentLocale ? "page" : undefined}
           >
             {locale.label}
-          </button>
+          </a>
         </Fragment>
       ))}
     </div>

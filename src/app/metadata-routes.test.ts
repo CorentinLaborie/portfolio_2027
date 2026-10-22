@@ -13,7 +13,14 @@ describe("robots", () => {
 });
 
 describe("sitemap", () => {
-  it("lists the single address of the site", () => {
-    expect(sitemap()).toEqual([{ url: new URL("/", siteUrl).href }]);
+  it("lists the English and French addresses, each linked to the other", () => {
+    const languages = {
+      en: new URL("/", siteUrl).href,
+      fr: new URL("/fr", siteUrl).href,
+    };
+    expect(sitemap()).toEqual([
+      { url: languages.en, alternates: { languages } },
+      { url: languages.fr, alternates: { languages } },
+    ]);
   });
 });

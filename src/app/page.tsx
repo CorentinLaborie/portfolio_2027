@@ -1,23 +1,17 @@
+import type { Metadata } from "next";
 import { Site } from "../components/site/Site";
-import { aboutContent as aboutFr } from "../content/fr/about";
-import { commonFr } from "../content/fr/common";
-import { contactContent as contactFr } from "../content/fr/contact";
-import { heroContent as heroFr } from "../content/fr/hero";
-import { projectsContent as projectsFr } from "../content/fr/projects";
-import { commonEn } from "../content/en/common";
-import { aboutContent as aboutEn } from "../content/en/about";
-import { contactContent as contactEn } from "../content/en/contact";
-import { heroContent as heroEn } from "../content/en/hero";
-import { projectsContent as projectsEn } from "../content/en/projects";
+import { homeContent } from "./home-content";
 
 // The hero age is computed from the birth date on each request; a prerendered page would freeze it at build time.
 export const dynamic = "force-dynamic";
 
+// The root address is the English version. The French one is /fr.
+export const metadata: Metadata = {
+  title: homeContent.en.common.brandName,
+  description: homeContent.en.common.metaDescription,
+  alternates: { canonical: "/", languages: { en: "/", fr: "/fr" } },
+};
+
 export default function HomePage() {
-  return (
-    <Site
-      fr={{ common: commonFr, hero: heroFr, about: aboutFr, projects: projectsFr, contact: contactFr }}
-      en={{ common: commonEn, hero: heroEn, about: aboutEn, projects: projectsEn, contact: contactEn }}
-    />
-  );
+  return <Site fr={homeContent.fr} en={homeContent.en} />;
 }

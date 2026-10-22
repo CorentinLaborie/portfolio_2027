@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { About } from "../about";
 import { Contact } from "../contact";
 import { Hero } from "../hero";
@@ -12,7 +12,7 @@ import type { ContactContent } from "../../content/fr/contact";
 import type { HeroContent } from "../../content/fr/hero";
 import type { ProjectsContent } from "../../content/fr/projects";
 import { anchors } from "../../content/shared";
-import { locales, type Locale } from "../../lib/locales";
+import { localePath, locales, type Locale } from "../../lib/locales";
 
 type SiteContent = {
   common: CommonContent;
@@ -25,26 +25,19 @@ type SiteContent = {
 type SiteProps = {
   fr: SiteContent;
   en: SiteContent;
+  /** The language shown on the first render: English on "/", French on "/fr". */
+  initialLocale?: Locale;
 };
 
-const switchOptions = locales.map((code) => ({ code, label: code.toUpperCase() }));
+const switchOptions = locales.map((code) => ({ code, label: code.toUpperCase(), href: localePath(code) }));
 
-function toLocale(value: string | null): Locale | null {
-  return locales.find((code) => code === value) ?? null;
-}
-
-export function Site({ fr, en }: SiteProps) {
-  // Always starts in English. The choice is not kept between visits.
-  const [locale, setLocale] = useState<Locale>("en");
+export function Site({ fr, en, initialLocale = "en" }: SiteProps) {
+  // The language is the one of the address: each switch option is a link to the other address.
+  const locale = initialLocale;
 
   useEffect(() => {
     document.documentElement.lang = locale;
   }, [locale]);
-
-  function handleLocaleChange(code: string) {
-    const next = toLocale(code);
-    if (next) setLocale(next);
-  }
 
   const content = locale === "fr" ? fr : en;
   const { common } = content;
@@ -73,7 +66,6 @@ export function Site({ fr, en }: SiteProps) {
           <LanguageSwitch
             locales={switchOptions}
             currentLocale={locale}
-            onChange={handleLocaleChange}
             languageLabel={common.languageLabel}
           />
         }
