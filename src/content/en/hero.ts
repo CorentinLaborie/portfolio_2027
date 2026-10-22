@@ -4,7 +4,8 @@ import { anchors, contactEmail } from "../shared";
 export const heroContent: HeroContent = {
   name: "Corentin Laborie",
   headline: "Digital solutions, open to a long-term contract",
-  pills: ["31 years old", "Based in Toulouse, France"],
+  birthDate: "1994-11-22",
+  pills: ["{age} years old", "Based in Toulouse, France"],
   tagline: "A jack of all trades for any mission.",
   primaryCta: { label: "Contact me", href: `mailto:${contactEmail}` },
   secondaryCta: { label: "See projects", href: anchors.projects },

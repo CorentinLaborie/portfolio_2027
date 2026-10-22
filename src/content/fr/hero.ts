@@ -3,6 +3,7 @@ import { anchors, contactEmail } from "../shared";
 export type HeroContent = {
   name: string;
   headline: string;
+  birthDate: string;
   pills: string[];
   tagline: string;
   primaryCta: { label: string; href: string };
@@ -13,7 +14,8 @@ export type HeroContent = {
 export const heroContent: HeroContent = {
   name: "Corentin Laborie",
   headline: "Solutions digitales, ouvert à un contrat long terme",
-  pills: ["31 ans", "Basé à Toulouse, France"],
+  birthDate: "1994-11-22",
+  pills: ["{age} ans", "Basé à Toulouse, France"],
   tagline: "Touche-à-tout pour toutes les missions.",
   primaryCta: { label: "Me contacter", href: `mailto:${contactEmail}` },
   secondaryCta: { label: "Voir les projets", href: anchors.projects },
