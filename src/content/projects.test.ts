@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { projectIds, toProjectId } from "./fr/projects";
 import { projectsContent as english } from "./en/projects";
@@ -26,5 +28,14 @@ describe("project options", () => {
     expect(english.empire.stack).toEqual(french.empire.stack);
     expect(french.empire.url).toBe("https://lempiredumalt.fr");
     expect(english.empire.url).toBe(french.empire.url);
+  });
+
+  it("has a screenshot file for every slide of L’Empire du Malt, in both languages", () => {
+    for (const content of [french, english]) {
+      expect(content.empire.slides.length).toBeGreaterThan(0);
+      for (const slide of content.empire.slides) {
+        expect(existsSync(join(process.cwd(), "public", slide.src))).toBe(true);
+      }
+    }
   });
 });

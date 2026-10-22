@@ -94,6 +94,21 @@ export function Projects({ content }: ProjectsProps) {
                   {content.empire.linkLabel}
                 </Button>
               </div>
+              <div className={styles.media}>
+                <Carousel
+                  slides={content.empire.slides}
+                  label={content.empire.carouselLabel}
+                  previousLabel={content.carousel.previousLabel}
+                  nextLabel={content.carousel.nextLabel}
+                  roleLabel={content.carousel.roleLabel}
+                  slideRoleLabel={content.carousel.slideRoleLabel}
+                  dialogLabel={content.carousel.dialogLabel}
+                  expandLabel={content.carousel.expandLabel}
+                  closeLabel={content.carousel.closeLabel}
+                  counterLabel={counterLabel}
+                  slideLabel={slideLabel}
+                />
+              </div>
             </div>
           ) : (
             <div className={styles.microContent}>

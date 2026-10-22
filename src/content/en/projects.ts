@@ -47,5 +47,14 @@ export const projectsContent: ProjectsContent = {
     url: "https://lempiredumalt.fr",
     linkLabel: "View project",
     stack: ["Bubble.io", "Node.js", "Express", "Vercel"],
+    carouselLabel: "L’Empire du Malt screenshots",
+    slides: [
+      { src: "/images/empire-home.jpg", alt: "Home page of L’Empire du Malt on desktop", width: 800, height: 600 },
+      { src: "/images/empire-establishments.jpg", alt: "Our locations page on desktop", width: 800, height: 600 },
+      { src: "/images/empire-about.jpg", alt: "About us page on desktop", width: 800, height: 600 },
+      { src: "/images/empire-gerzat-menu.jpg", alt: "Gerzat location menu on desktop", width: 800, height: 600 },
+      { src: "/images/empire-mobile-home.jpg", alt: "Home page of L’Empire du Malt on mobile", width: 375, height: 812 },
+      { src: "/images/empire-mobile-about.jpg", alt: "About us page on mobile", width: 375, height: 812 },
+    ],
   },
 };

@@ -48,6 +48,8 @@ export type ProjectsContent = {
     url: string;
     linkLabel: string;
     stack: string[];
+    carouselLabel: string;
+    slides: CarouselSlide[];
   };
 };
 
@@ -98,5 +100,14 @@ export const projectsContent: ProjectsContent = {
     url: "https://lempiredumalt.fr",
     linkLabel: "Voir le projet",
     stack: ["Bubble.io", "Node.js", "Express", "Vercel"],
+    carouselLabel: "Captures d’écran de L’Empire du Malt",
+    slides: [
+      { src: "/images/empire-home.jpg", alt: "Accueil de L’Empire du Malt sur ordinateur", width: 800, height: 600 },
+      { src: "/images/empire-establishments.jpg", alt: "Page Nos établissements sur ordinateur", width: 800, height: 600 },
+      { src: "/images/empire-about.jpg", alt: "Page Qui sommes-nous sur ordinateur", width: 800, height: 600 },
+      { src: "/images/empire-gerzat-menu.jpg", alt: "Carte de l’établissement de Gerzat sur ordinateur", width: 800, height: 600 },
+      { src: "/images/empire-mobile-home.jpg", alt: "Accueil de L’Empire du Malt sur mobile", width: 375, height: 812 },
+      { src: "/images/empire-mobile-about.jpg", alt: "Page Qui sommes-nous sur mobile", width: 375, height: 812 },
+    ],
   },
 };
