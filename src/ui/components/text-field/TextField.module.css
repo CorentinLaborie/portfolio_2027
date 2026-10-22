@@ -17,7 +17,7 @@
   width: 100%;
   box-sizing: border-box;
   padding: var(--spacing-space-14) var(--spacing-space-16);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-field-border);
   border-radius: var(--radius-12);
   background: var(--color-card);
   color: var(--color-foreground);
