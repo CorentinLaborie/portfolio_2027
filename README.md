@@ -4,7 +4,7 @@ Site vitrine en Next.js 16 (App Router), en français et en anglais.
 
 ## Commandes
 
-`ash
+```bash
 npm ci            # installation exacte des dépendances
 npm run dev       # développement
 npm run build     # build de production
@@ -12,17 +12,15 @@ npm start         # serveur Node de production (port 3000 par défaut, ou npm st
 npm run typecheck # TypeScript
 npm run lint      # ESLint
 npm test          # tests unitaires (Vitest)
-`
+```
 
 ## Déploiement
 
 Le site tourne comme serveur Node (pas d'export statique) : la route /api/contact a besoin d'un serveur.
 
 1. Installer Node.js 24 LTS sur le serveur.
-2. 
-pm ci && npm run build.
-3. Lancer 
-pm start sous un gestionnaire de processus (systemd), derrière un reverse proxy HTTPS.
+2. `npm ci && npm run build`.
+3. Lancer `npm start` sous un gestionnaire de processus (systemd), derrière un reverse proxy HTTPS.
 
 ## Variables d'environnement
 
