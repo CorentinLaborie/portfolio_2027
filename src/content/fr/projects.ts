@@ -27,6 +27,7 @@ export type ProjectsContent = {
     title: string;
     description: string;
     url: string;
+    linkLabel: string;
     hashtags: string[];
     stack: string[];
   };
@@ -67,6 +68,7 @@ export const projectsContent: ProjectsContent = {
     description:
       "Un fil de questions au lieu d’un fil de réactions. On pose une question, les autres réagissent (J’aime, Pas d’accord, Y), et la conversation ne s’ouvre qu’à 50 Y. Réservé aux adultes : l’âge déclaré à l’inscription, à partir de la date de naissance, écarte les mineurs.",
     url: "https://y.corentin-laborie.com",
+    linkLabel: "Voir le projet",
     hashtags: ["#online_life", "#irl_vs_online"],
     stack: ["TypeScript", "Next.js", "NestJS", "PostgreSQL", "Prisma", "Docker"],
   },

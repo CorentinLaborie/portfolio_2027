@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Carousel, Logo, Pill, Select } from "@/ui";
+import { Button, Carousel, Logo, Pill, Select } from "@/ui";
 import type { ProjectId, ProjectsContent } from "../../content/fr/projects";
 import { anchors, sectionId } from "../../content/shared";
 import styles from "./Projects.module.css";
@@ -45,9 +45,6 @@ export function Projects({ content }: ProjectsProps) {
                 <div className={styles.intro}>
                   <h3 className={styles.yTitle}>{content.y.title}</h3>
                   <p className={styles.description}>{content.y.description}</p>
-                  <a className={styles.link} href={content.y.url} target="_blank" rel="noopener noreferrer">
-                    {content.y.url.replace(/^https:\/\//, "")}
-                  </a>
                 </div>
                 <div className={styles.tags}>
                   {content.y.hashtags.map((tag) => (
@@ -61,6 +58,9 @@ export function Projects({ content }: ProjectsProps) {
                     <Pill key={item}>{item}</Pill>
                   ))}
                 </div>
+                <Button href={content.y.url} className={styles.projectButton}>
+                  {content.y.linkLabel}
+                </Button>
               </div>
               <div className={styles.media}>
                 <Carousel

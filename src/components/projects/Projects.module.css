@@ -89,11 +89,8 @@
   color: var(--tile-muted);
 }
 
-.link {
+.projectButton {
   align-self: flex-start;
-  color: var(--color-primary);
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .tags {

@@ -31,6 +31,7 @@ export const projectsContent: ProjectsContent = {
     description:
       "A feed of questions instead of a feed of reactions. Someone asks a question, others react (Like, Disagree, Y), and the conversation only opens at 50 Y. Adults only: the age declared at sign-up, from the birth date, keeps minors out.",
     url: "https://y.corentin-laborie.com",
+    linkLabel: "View project",
     hashtags: ["#online_life", "#irl_vs_online"],
     stack: ["TypeScript", "Next.js", "NestJS", "PostgreSQL", "Prisma", "Docker"],
   },
