@@ -1,21 +1,9 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { projectIds, toProjectId } from "./fr/projects";
+import { projectIds } from "./fr/projects";
 import { projectsContent as english } from "./en/projects";
 import { projectsContent as french } from "./fr/projects";
-
-describe("toProjectId", () => {
-  it("keeps the values of the project selector", () => {
-    expect(toProjectId("y")).toBe("y");
-    expect(toProjectId("micro")).toBe("micro");
-    expect(toProjectId("empire")).toBe("empire");
-  });
-
-  it("falls back to Y for an unknown value", () => {
-    expect(toProjectId("unknown")).toBe("y");
-  });
-});
 
 describe("project options", () => {
   it("offers every project in both languages, in the same order", () => {

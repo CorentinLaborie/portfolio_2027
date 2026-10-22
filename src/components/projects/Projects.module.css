@@ -20,8 +20,34 @@
   color: var(--color-foreground);
 }
 
-.selector {
-  align-self: flex-start;
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-space-8);
+}
+
+.chip {
+  min-height: 44px;
+  padding: var(--spacing-space-8) var(--spacing-space-16);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 12px;
+  background: var(--color-card);
+  color: var(--color-foreground);
+  font-family: var(--type-text-family);
+  font-size: var(--type-text-body-strong-font-size);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
 }
 
 .bento {

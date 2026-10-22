@@ -4,11 +4,6 @@ export const projectIds = ["y", "micro", "empire"] as const;
 
 export type ProjectId = (typeof projectIds)[number];
 
-/** Turns the value of the project selector back into a project. Unknown values fall back to Y. */
-export function toProjectId(value: string): ProjectId {
-  return projectIds.find((id) => id === value) ?? "y";
-}
-
 type CarouselSlide = Parameters<typeof Carousel>[0]["slides"][number];
 
 type ProjectOption = { value: ProjectId; label: string };

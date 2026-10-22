@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Button, Carousel, Logo, Pill, Select } from "@/ui";
-import { toProjectId, type ProjectId, type ProjectsContent } from "../../content/fr/projects";
+import { Button, Carousel, Logo, Pill } from "@/ui";
+import type { ProjectId, ProjectsContent } from "../../content/fr/projects";
 import { anchors, sectionId } from "../../content/shared";
 import styles from "./Projects.module.css";
 
@@ -25,13 +25,18 @@ export function Projects({ content }: ProjectsProps) {
     <section id={sectionId(anchors.projects)} className={styles.section}>
       <h2 className={styles.title}>{content.title}</h2>
 
-      <div className={styles.selector}>
-        <Select
-          label={content.selectLabel}
-          options={content.options}
-          value={selected}
-          onChange={(value) => setSelected(toProjectId(value))}
-        />
+      <div role="group" aria-label={content.selectLabel} className={styles.chips}>
+        {content.options.map((option) => (
+          <button
+            key={option.value}
+            type="button"
+            className={styles.chip}
+            aria-pressed={option.value === selected}
+            onClick={() => setSelected(option.value)}
+          >
+            {option.label}
+          </button>
+        ))}
       </div>
 
       <div className={styles.bento}>
