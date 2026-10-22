@@ -10,6 +10,9 @@ import { contactContent as contactEn } from "../content/en/contact";
 import { heroContent as heroEn } from "../content/en/hero";
 import { projectsContent as projectsEn } from "../content/en/projects";
 
+// The hero age is computed from the birth date on each request; a prerendered page would freeze it at build time.
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   return (
     <Site
