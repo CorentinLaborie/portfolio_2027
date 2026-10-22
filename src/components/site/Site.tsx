@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { About } from "../about";
+import { BrandMark } from "./BrandMark";
 import { Contact } from "../contact";
 import { Hero } from "../hero";
 import { Projects } from "../projects";
@@ -57,6 +58,7 @@ export function Site({ fr, en, initialLocale = "en" }: SiteProps) {
     <>
       <SiteHeader
         brand={{ label: common.brandName, href: anchors.home }}
+        brandMark={<BrandMark size={40} />}
         links={[
           { label: common.nav.about, href: anchors.about },
           { label: common.nav.projects, href: anchors.projects },

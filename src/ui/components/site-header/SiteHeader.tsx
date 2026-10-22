@@ -9,6 +9,8 @@ type HeaderLink = { label: string; href: string };
 
 type SiteHeaderProps = {
   brand: HeaderLink;
+  /** Rendered in place of the brand label (for example a BrandMark). The label stays the accessible name. */
+  brandMark?: ReactNode;
   links: HeaderLink[];
   /** Rendered element for the language switch (for example a LanguageSwitch). Omit when the site has one language. */
   languageSwitch?: ReactNode;
@@ -20,7 +22,7 @@ type SiteHeaderProps = {
   closeLabel: string;
 };
 
-export function SiteHeader({ brand, links, languageSwitch, navLabel, menuLabel, closeLabel }: SiteHeaderProps) {
+export function SiteHeader({ brand, brandMark, links, languageSwitch, navLabel, menuLabel, closeLabel }: SiteHeaderProps) {
   const [open, setOpen] = useState(false);
   const navId = useId();
   const burgerRef = useRef<HTMLButtonElement>(null);
@@ -59,8 +61,8 @@ export function SiteHeader({ brand, links, languageSwitch, navLabel, menuLabel, 
 
   return (
     <header className={styles.header}>
-      <Link href={brand.href} className={styles.brand}>
-        {brand.label}
+      <Link href={brand.href} className={styles.brand} aria-label={brandMark ? brand.label : undefined}>
+        {brandMark ?? brand.label}
       </Link>
 
       <nav ref={navRef} id={navId} aria-label={navLabel} className={open ? `${styles.nav} ${styles.open}` : styles.nav}>
