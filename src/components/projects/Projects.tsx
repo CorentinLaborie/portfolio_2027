@@ -45,6 +45,9 @@ export function Projects({ content }: ProjectsProps) {
                 <div className={styles.intro}>
                   <h3 className={styles.yTitle}>{content.y.title}</h3>
                   <p className={styles.description}>{content.y.description}</p>
+                  <a className={styles.link} href={content.y.url} target="_blank" rel="noopener noreferrer">
+                    {content.y.url.replace(/^https:\/\//, "")}
+                  </a>
                 </div>
                 <div className={styles.tags}>
                   {content.y.hashtags.map((tag) => (

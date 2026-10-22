@@ -26,6 +26,7 @@ export type ProjectsContent = {
   y: {
     title: string;
     description: string;
+    url: string;
     hashtags: string[];
     stack: string[];
   };
@@ -65,6 +66,7 @@ export const projectsContent: ProjectsContent = {
     title: "Y, le réseau social qui vous fait réfléchir.",
     description:
       "Un fil de questions au lieu d’un fil de réactions. On pose une question, les autres réagissent (J’aime, Pas d’accord, Y), et la conversation ne s’ouvre qu’à 50 Y. Réservé aux adultes : la vérification de l’âge, via VerifAge, protège les mineurs dès l’inscription.",
+    url: "https://y.corentin-laborie.com",
     hashtags: ["#online_life", "#irl_vs_online"],
     stack: ["TypeScript", "Next.js", "NestJS", "PostgreSQL", "Prisma", "Docker"],
   },

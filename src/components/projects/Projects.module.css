@@ -89,6 +89,13 @@
   color: var(--tile-muted);
 }
 
+.link {
+  align-self: flex-start;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;
