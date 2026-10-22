@@ -37,6 +37,6 @@ export const projectsContent: ProjectsContent = {
   },
   micro: {
     title: "My Mock Micro Investor",
-    description: "Presentation coming soon.",
+    description: "Project under construction.",
   },
 };
