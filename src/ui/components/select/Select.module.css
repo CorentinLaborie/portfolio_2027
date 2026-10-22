@@ -9,7 +9,7 @@
   gap: var(--spacing-space-8);
   padding: var(--spacing-space-14) var(--spacing-space-28);
   border: 2px solid var(--color-foreground);
-  border-radius: var(--radius-full);
+  border-radius: 12px;
   background: var(--color-card);
   color: var(--color-foreground);
   font-family: inherit;
