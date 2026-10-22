@@ -1,4 +1,4 @@
-export const contactEmail = "corentin.laborie@epitech.eu";
+export const contactEmail = "corentin.lab82@gmail.com";
 
 export const anchors = {
   home: "#home",
