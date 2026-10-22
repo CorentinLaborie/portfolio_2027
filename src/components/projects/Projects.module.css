@@ -57,7 +57,7 @@
   min-height: 44px;
   padding: var(--spacing-space-8) var(--spacing-space-16);
   border: 1px solid var(--color-border-strong);
-  border-radius: 12px;
+  border-radius: var(--radius-button);
   background: var(--color-card);
   color: var(--color-foreground);
   font-family: var(--type-text-family);

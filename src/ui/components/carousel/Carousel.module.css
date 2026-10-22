@@ -91,7 +91,7 @@
   height: 44px;
   padding: 0;
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: var(--radius-button);
   background: var(--color-card);
   color: var(--color-foreground);
   box-shadow: var(--shadow-raised);

@@ -7,7 +7,7 @@
   min-width: 44px;
   padding: var(--spacing-space-14) var(--spacing-space-28);
   border: 0;
-  border-radius: 12px;
+  border-radius: var(--radius-button);
   font-family: var(--type-text-family);
   font-size: var(--type-text-body-strong-font-size);
   line-height: var(--type-text-body-strong-line-height);
