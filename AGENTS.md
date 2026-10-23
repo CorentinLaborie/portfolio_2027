@@ -10,5 +10,5 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Project notes
 
-Before writing Next.js code in this project, read `../digests/NEXTJS-DIGEST.md` (a digest of the Next.js 16.4.2 docs, kept in the `digests/` folder at the project root). It lists the rules that apply here. The full docs are in `nextjs-docs/` at this repo root.
+Before writing Next.js code in this project, read `../docs/digests/NEXTJS-DIGEST.md` (a digest of the Next.js 16.4.2 docs, kept in the `docs/digests/` folder at the project root). It lists the rules that apply here. The full docs are in `nextjs-docs/` at this repo root.
 
