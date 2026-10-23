@@ -2,9 +2,25 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Titles use Gabriela; running text and interface use Inter (owner decision, 2026-10-23). */
+h1,
+h2,
+h3 {
+  font-family: var(--type-families-display);
+}
+
 body {
   min-height: 100vh;
+  font-family: var(--type-families-sans);
   background: linear-gradient(180deg, var(--color-page-gradient-start) 0%, var(--color-page-gradient-end) 100%);
+}
+
+/* Form controls and buttons do not inherit the font by default. */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
 }
 
 *,
