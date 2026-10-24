@@ -125,7 +125,7 @@
 }
 
 /*
- * From the tablet breakpoint, the bar only as wide as its brand, links and language switch, centred at the top.
+ * From the tablet breakpoint, the bar fills the full width of its parent, centred at the top.
  * The brand sits left, the links in the middle and the language switch right: the nav wrapper is dropped so
  * that its list and switch become items of the header grid.
  */
@@ -135,8 +135,7 @@
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     gap: var(--spacing-space-32);
-    width: fit-content;
-    max-width: calc(100% - 2 * var(--spacing-space-16));
+    width: 100%;
     margin-inline: auto;
     margin-top: var(--spacing-space-16);
     border: 1px solid var(--color-border);

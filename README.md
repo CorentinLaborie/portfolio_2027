@@ -14,7 +14,7 @@ Site vitrine en Next.js 16 (App Router), en français et en anglais.
 
 - L'en-tête affiche le monogramme « CL » (dégradé indigo, composant `src/components/site/BrandMark.tsx`) à la place du nom. Le nom reste disponible comme étiquette accessible.
 - Le favicon est `src/app/icon.svg`.
-- À partir de 768 px, l'en-tête est une barre compacte centrée en haut : marque à gauche, liens au centre, sélecteur de langue à droite (`src/ui/components/site-header/SiteHeader.module.css`). En dessous, le menu devient un bouton « burger ».
+- À partir de 768 px, l'en-tête est une barre collée en haut, pleine largeur de son parent : marque à gauche, liens au centre, sélecteur de langue à droite (`src/ui/components/site-header/SiteHeader.module.css`). En dessous, le menu devient un bouton « burger ».
 
 ## Projets
 
