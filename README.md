@@ -1,32 +1,31 @@
-# Site personnel (Corentin Laborie)
+# Personal website (Corentin Laborie)
 
-Site vitrine en Next.js 16 (App Router), en français et en anglais.
+Showcase website built with Next.js 16 (App Router), in English and French.
 
-## Pages et langues
+## Pages and languages
 
-- `/` : version anglaise (langue par défaut), métadonnées en anglais.
-- `/fr` : version française, avec ses propres titre et description.
-- Les boutons EN / FR sont des liens vers ces deux adresses. Chaque page déclare l'autre avec `hreflang`, et le plan du site (`/sitemap.xml`) les liste toutes les deux.
-- La page d'accueil est rendue à chaque requête (`dynamic = "force-dynamic"`), pour que l'âge affiché dans le hero reste juste.
-- Le contenu des deux langues est partagé dans `src/app/home-content.ts`.
+- `/`: English version (default language), with English metadata.
+- `/fr`: French version, with its own title and description.
+- The EN / FR buttons link to these two addresses. Each page declares the other with `hreflang`, and the sitemap (`/sitemap.xml`) lists both.
+- The home page is rendered on every request (`dynamic = "force-dynamic"`), so the age shown in the hero stays correct.
+- The content of both languages is shared in `src/app/home-content.ts`.
 
-## Commandes
+## Commands
 
 ```bash
-npm ci            # installation exacte des dépendances
-npm run dev       # développement
-npm run build     # build de production
-npm start         # serveur Node de production (port 3000 par défaut, ou npm start -- -p 3001)
+npm ci            # exact installation of the dependencies
+npm run dev       # development
+npm run build     # production build
+npm start         # production Node server (port 3000 by default, or npm start -- -p 3001)
 npm run typecheck # TypeScript
 npm run lint      # ESLint
-npm test          # tests unitaires (Vitest)
+npm test          # unit tests (Vitest)
 ```
 
-## Déploiement
+## Deployment
 
-Le site tourne comme serveur Node (pas d'export statique) : la route /api/contact a besoin d'un serveur.
+The site runs as a Node server (not a static export): the /api/contact route needs a server.
 
-1. Installer Node.js 24 LTS sur le serveur.
+1. Install Node.js 24 LTS on the server.
 2. `npm ci && npm run build`.
-3. Lancer `npm start` sous un gestionnaire de processus (systemd), derrière un reverse proxy HTTPS.
-
+3. Run `npm start` under a process manager (systemd), behind an HTTPS reverse proxy.
