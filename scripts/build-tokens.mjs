@@ -17,7 +17,7 @@ const families = source.type?.families ?? {};
 // Font families served by next/font. The app defines these variables on <html>.
 const FONT_VARIABLES = {
   Inter: "--font-inter",
-  Gabriela: "--font-gabriela",
+  "Alte Haas Grotesk": "--font-alte-haas-grotesk",
 };
 
 // Points a font stack at its next/font variable, keeping the fallbacks after it.

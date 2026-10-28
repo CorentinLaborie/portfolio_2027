@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Gabriela, Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "@/ui/styles/tokens.css";
 import "@/ui/styles/globals.css";
 import { commonEn } from "../content/en/common";
@@ -13,11 +14,13 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const gabriela = Gabriela({
-  subsets: ["latin"],
-  weight: "400",
+const alteHaasGrotesk = localFont({
+  src: [
+    { path: "../ui/fonts/alte-haas-grotesk/AlteHaasGroteskRegular.ttf", weight: "400", style: "normal" },
+    { path: "../ui/fonts/alte-haas-grotesk/AlteHaasGroteskBold.ttf", weight: "700", style: "normal" },
+  ],
   display: "swap",
-  variable: "--font-gabriela",
+  variable: "--font-alte-haas-grotesk",
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${gabriela.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${alteHaasGrotesk.variable} ${jetbrainsMono.variable}`}>
       <body>{children}</body>
     </html>
   );
