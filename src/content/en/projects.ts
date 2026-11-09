@@ -7,7 +7,6 @@ export const projectsContent: ProjectsContent = {
   options: [
     { value: "empire", label: "L’Empire du Malt", kind: "professional" },
     { value: "y", label: "Y", kind: "personal" },
-    { value: "micro", label: "My Mock Micro Investor", kind: "personal" },
   ],
   carousel: {
     label: "Y screenshots",
@@ -36,10 +35,6 @@ export const projectsContent: ProjectsContent = {
     linkLabel: "View project",
     hashtags: ["#online_life", "#irl_vs_online"],
     stack: ["TypeScript", "Next.js", "NestJS", "PostgreSQL", "Prisma", "Docker"],
-  },
-  micro: {
-    title: "My Mock Micro Investor",
-    description: "Project under construction.",
   },
   empire: {
     title: "L’Empire du Malt",

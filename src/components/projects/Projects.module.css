@@ -164,20 +164,6 @@
   font-weight: var(--type-text-metadata-font-weight);
 }
 
-.microContent {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: var(--spacing-space-16);
-}
-
-.microTitle {
-  margin: 0;
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: 800;
-}
-
 @media (min-width: 640px) {
   .section {
     padding-inline: var(--spacing-space-24);

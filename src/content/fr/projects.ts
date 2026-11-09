@@ -1,6 +1,6 @@
 import type { Carousel } from "@/ui";
 
-export const projectIds = ["empire", "y", "micro"] as const;
+export const projectIds = ["empire", "y"] as const;
 
 export type ProjectId = (typeof projectIds)[number];
 
@@ -37,10 +37,6 @@ export type ProjectsContent = {
     hashtags: string[];
     stack: string[];
   };
-  micro: {
-    title: string;
-    description: string;
-  };
   empire: {
     title: string;
     description: string;
@@ -60,7 +56,6 @@ export const projectsContent: ProjectsContent = {
   options: [
     { value: "empire", label: "L’Empire du Malt", kind: "professional" },
     { value: "y", label: "Y", kind: "personal" },
-    { value: "micro", label: "My Mock Micro Investor", kind: "personal" },
   ],
   carousel: {
     label: "Captures d’écran de Y",
@@ -89,10 +84,6 @@ export const projectsContent: ProjectsContent = {
     linkLabel: "Voir le projet",
     hashtags: ["#online_life", "#irl_vs_online"],
     stack: ["TypeScript", "Next.js", "NestJS", "PostgreSQL", "Prisma", "Docker"],
-  },
-  micro: {
-    title: "My Mock Micro Investor",
-    description: "Projet en cours de construction.",
   },
   empire: {
     title: "L’Empire du Malt",

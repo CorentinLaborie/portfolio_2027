@@ -95,7 +95,7 @@ export function Projects({ content }: ProjectsProps) {
                 />
               </div>
             </div>
-          ) : selected === "empire" ? (
+          ) : (
             <div className={styles.yContent}>
               <div className={styles.info}>
                 <div className={styles.logo}>
@@ -135,11 +135,6 @@ export function Projects({ content }: ProjectsProps) {
                   slideLabel={slideLabel}
                 />
               </div>
-            </div>
-          ) : (
-            <div className={styles.microContent}>
-              <h3 className={styles.microTitle}>{content.micro.title}</h3>
-              <p className={styles.description}>{content.micro.description}</p>
             </div>
           )}
         </article>
