@@ -8,8 +8,8 @@ export type ContactMail = {
 };
 
 /**
- * Sends the mail of a contact message. The real adapter (Brevo, step 0.4 and DEC-018) is not wired yet: until it is,
- * the route answers that sending is unavailable, so no message is lost silently.
+ * Sends the mail of a contact message. The Brevo adapter is chosen from the environment (see configured-sender.ts);
+ * without its settings, the route answers that sending is unavailable, so no message is lost silently.
  */
 export type MailSender = {
   send(mail: ContactMail): Promise<void>;
