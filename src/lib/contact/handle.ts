@@ -17,9 +17,12 @@ export type ContactDependencies = {
   limiter: RateLimiter;
 };
 
-/** The client address: the first address of x-forwarded-for, then x-real-ip, then "unknown". */
+/**
+ * The client address. The site sits behind one reverse proxy, which appends the address it received to
+ * x-forwarded-for: the last entry is that address. The first entries come from the visitor and can be forged.
+ */
 export function clientIp(request: Request): string {
-  const forwarded = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  const forwarded = request.headers.get("x-forwarded-for")?.split(",").at(-1)?.trim();
   if (forwarded) {
     return forwarded;
   }

@@ -172,8 +172,15 @@ describe("handleContact", () => {
 });
 
 describe("clientIp", () => {
-  it("uses the first address of x-forwarded-for", () => {
-    expect(clientIp(post(VALID, { "x-forwarded-for": " 203.0.113.7 , 10.0.0.1" }))).toBe("203.0.113.7");
+  it("uses the last address of x-forwarded-for, the one the proxy added", () => {
+    expect(clientIp(post(VALID, { "x-forwarded-for": " 203.0.113.7 , 198.51.100.9" }))).toBe("198.51.100.9");
+  });
+
+  it("ignores the addresses a visitor forges in front, so the same visitor keeps the same key", () => {
+    const first = clientIp(post(VALID, { "x-forwarded-for": "10.0.0.1, 198.51.100.9" }));
+    const second = clientIp(post(VALID, { "x-forwarded-for": "10.0.0.2, 198.51.100.9" }));
+    expect(first).toBe("198.51.100.9");
+    expect(second).toBe("198.51.100.9");
   });
 
   it("falls back to x-real-ip, then to unknown", () => {
