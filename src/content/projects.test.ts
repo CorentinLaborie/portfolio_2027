@@ -13,7 +13,7 @@ describe("project options", () => {
 
   it("lists the professional projects first, then the personal ones", () => {
     const kinds = french.options.map((option) => option.kind);
-    expect(kinds).toEqual(["professional", "personal", "personal"]);
+    expect(kinds).toEqual(["professional", "personal"]);
     expect(english.options.map((option) => option.kind)).toEqual(kinds);
   });
 
