@@ -37,3 +37,6 @@ npm-debug.log*
 
 # Caches
 .turbo/
+
+# Local copy of the Next.js docs (read them from node_modules/next/dist/docs/)
+nextjs-docs/
