@@ -29,3 +29,16 @@ The site runs as a Node server (not a static export): the /api/contact route nee
 1. Install Node.js 24 LTS on the server.
 2. `npm ci && npm run build`.
 3. Run `npm start` under a process manager (systemd), behind an HTTPS reverse proxy.
+
+## Contact form
+
+- The form posts to `/api/contact`. It sends the message through Brevo (`src/lib/contact/brevo.ts`).
+- Two environment variables are read: `BREVO_API_KEY` and `MAIL_FROM_ADDRESS`. Set neither in the repository; put their values on the server only.
+- Without both values, the route answers 503 and no message is lost silently.
+- The client address comes from `x-forwarded-for`: the reverse proxy in front of the site must add it.
+
+## Security headers
+
+- `src/lib/security/security-headers.ts` sends these headers on every page: `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, a strict `Referrer-Policy`, a restrictive `Permissions-Policy`, `Strict-Transport-Security` and `Content-Security-Policy: frame-ancestors 'none'`.
+- The policy only restricts framing. A full Content-Security-Policy would need nonces for the scripts Next.js injects; it is not set yet.
+- The header list is tested in `security-headers.test.ts`.
